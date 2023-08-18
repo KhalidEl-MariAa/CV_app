@@ -1,6 +1,7 @@
+import 'package:cv_app/core/utils/fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -17,8 +18,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       image: const Image(image: AssetImage('lib/core/assets/images/hello.jpg')),
       decoration: PageDecoration(
 
-        titleTextStyle: GoogleFonts.raleway().copyWith(fontSize: 30,letterSpacing: 3,fontStyle: FontStyle.italic,fontWeight: FontWeight.bold),
-        bodyTextStyle: GoogleFonts.slabo13px()) 
+        titleTextStyle: titlefont.copyWith(fontSize: 30,letterSpacing: 3,fontStyle: FontStyle.italic,fontWeight: FontWeight.bold),
+        bodyTextStyle: bodyfont) 
         
       
 
@@ -28,8 +29,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       title: "doesn't  have exprience to create your CV?",
       image: const Image(image: AssetImage('lib/core/assets/images/cv.jpg')),
       decoration: PageDecoration(
-        titleTextStyle: GoogleFonts.raleway().copyWith(fontSize: 30,letterSpacing: 3,fontStyle: FontStyle.italic,fontWeight: FontWeight.bold),
-        bodyTextStyle: GoogleFonts.slabo13px() )
+        titleTextStyle: titlefont.copyWith(fontSize: 30,letterSpacing: 3,fontStyle: FontStyle.italic,fontWeight: FontWeight.bold),
+        bodyTextStyle: bodyfont )
 
       
       
