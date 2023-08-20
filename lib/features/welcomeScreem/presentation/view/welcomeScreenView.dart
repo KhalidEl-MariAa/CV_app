@@ -58,7 +58,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               backgroundColor: Colors.black,
               textStyle: bodyfont.copyWith(),
             ),
-            child: const Text('Done')
+            child: const Text('Lets go!')
             ,),
           showNextButton: false,
           
