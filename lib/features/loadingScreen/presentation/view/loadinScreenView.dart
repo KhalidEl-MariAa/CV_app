@@ -16,6 +16,7 @@ class _LoadingScreenViewState extends State<LoadingScreenView> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    navigateToHome();
     
   }
 
