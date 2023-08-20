@@ -52,7 +52,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           },
           done: ElevatedButton(
             onPressed: (){
-              Navigator.pushReplacementNamed(context, PagesNames.loadingScreen);
+              Navigator.pushReplacementNamed(context, PagesNames.loadingScreenName);
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.black,

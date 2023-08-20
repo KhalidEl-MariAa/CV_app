@@ -1,4 +1,5 @@
 import 'package:cv_app/core/utils/pagesName.dart';
+import 'package:cv_app/features/homeSreen/presentation/view/homeScreenView.dart';
 import 'package:cv_app/features/loadingScreen/presentation/view/loadinScreenView.dart';
 import 'package:cv_app/features/welcomeScreem/presentation/view/welcomeScreenView.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
       
       routes: {
         PagesNames.welcomeScreenName:(context) => const WelcomeScreen(),
-        PagesNames.loadingScreen:(context) => const LoadingScreenView()
+        PagesNames.loadingScreenName:(context) => const LoadingScreenView(),
+        PagesNames.homeScreenName:(context) => const HomeScreenView()
       },
       initialRoute: PagesNames.welcomeScreenName,
     );
