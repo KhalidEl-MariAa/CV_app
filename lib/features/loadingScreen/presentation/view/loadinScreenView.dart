@@ -1,3 +1,4 @@
+import 'package:cv_app/core/utils/pagesName.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
@@ -16,6 +17,14 @@ class _LoadingScreenViewState extends State<LoadingScreenView> {
     // TODO: implement initState
     super.initState();
     
+  }
+
+  void navigateToHome(){
+
+    Future.delayed(const Duration(seconds: 5),
+    () {
+      Navigator.pushReplacementNamed(context, PagesNames.homeScreenName);
+    },);
   }
 
  
