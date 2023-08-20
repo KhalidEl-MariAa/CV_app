@@ -1,5 +1,5 @@
 import 'package:cv_app/core/utils/pagesName.dart';
-import 'package:cv_app/features/welcomeScreem/presentation/welcomeScreenView.dart';
+import 'package:cv_app/features/welcomeScreem/presentation/view/welcomeScreenView.dart';
 import 'package:flutter/material.dart';
 
 void main() {
