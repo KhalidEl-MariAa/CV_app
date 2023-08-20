@@ -18,12 +18,11 @@ class _HomeScreenViewState extends State<HomeScreenView> {
           decoration: BoxDecoration(
            gradient: const LinearGradient(
               colors: [Colors.purple,Colors.blue],
-              
             ),
             borderRadius: BorderRadius.circular(20)
           ),
+
           child: GNav(
-            
             iconSize: 25,
              gap: 5,
              textStyle: titlefont.copyWith(color: Colors.amber),
@@ -31,11 +30,9 @@ class _HomeScreenViewState extends State<HomeScreenView> {
             tabs:const [
               GButton(icon: Icons.lightbulb,iconColor: Colors.amber,text: 'Instructions', ),
               GButton(icon: Icons.border_color_outlined,iconColor: Colors.white,text: 'Create your Resume',),
-               GButton(icon: Icons.call,iconColor: Colors.white,text: 'Contact us',),
-               
-
-                
+               GButton(icon: Icons.call,iconColor: Colors.white,text: 'Contact us',),                
             ] ),
+            
         ) ,
       ),
     );
