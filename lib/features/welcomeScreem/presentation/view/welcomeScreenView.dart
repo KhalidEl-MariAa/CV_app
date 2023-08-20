@@ -1,4 +1,5 @@
 import 'package:cv_app/core/utils/fonts.dart';
+import 'package:cv_app/core/utils/pagesName.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
@@ -46,9 +47,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             
             globalBackgroundColor: Colors.white,
           pages: pages,
-          onDone: (){},
+          onDone: (){
+            
+          },
           done: ElevatedButton(
-            onPressed: (){},
+            onPressed: (){
+              Navigator.pushReplacementNamed(context, PagesNames.loadingScreen);
+            },
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.black,
               textStyle: bodyfont.copyWith(),
