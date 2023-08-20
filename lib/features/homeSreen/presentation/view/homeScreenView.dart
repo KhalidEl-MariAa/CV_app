@@ -30,8 +30,9 @@ class _HomeScreenViewState extends State<HomeScreenView> {
             activeColor: Colors.black,
             tabs:const [
               GButton(icon: Icons.lightbulb,iconColor: Colors.amber,text: 'Instructions', ),
+              GButton(icon: Icons.border_color_outlined,iconColor: Colors.white,text: 'Create your Resume',),
                GButton(icon: Icons.call,iconColor: Colors.white,text: 'Contact us',),
-               GButton(icon: Icons.border_color_outlined,iconColor: Colors.white,text: 'Create Resume',),
+               
 
                 
             ] ),
