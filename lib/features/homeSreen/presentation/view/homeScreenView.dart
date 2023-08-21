@@ -1,4 +1,5 @@
 import 'package:cv_app/core/utils/fonts.dart';
+import 'package:cv_app/features/homeSreen/presentation/view/pages/InstructionPage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 class HomeScreenView extends StatefulWidget {
@@ -13,7 +14,8 @@ class _HomeScreenViewState extends State<HomeScreenView> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        
+        backgroundColor: Colors.white,
+        body: InstructionsView(),
         bottomNavigationBar: Container(
           decoration: BoxDecoration(
            gradient: const LinearGradient(
