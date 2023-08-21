@@ -3,7 +3,7 @@ import '../widgets/instructionsFirstHalf.dart';
 
 
 class InstructionsView extends StatefulWidget {
-   InstructionsView({super.key});
+   const InstructionsView({super.key});
 
   @override
   State<InstructionsView> createState() => _InstructionsViewState();
