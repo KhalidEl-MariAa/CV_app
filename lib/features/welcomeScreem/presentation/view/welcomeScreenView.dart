@@ -57,8 +57,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.black,
               textStyle: bodyfont.copyWith(),
+              fixedSize: Size(100, 100),
+              
             ),
-            child: const Text('Lets go!')
+            child: const Padding(
+              padding:  EdgeInsets.only(left:12.0),
+              child:  Text('Lets go!',style: TextStyle(color: Colors.white),),
+            )
             ,),
           showNextButton: false,
           
