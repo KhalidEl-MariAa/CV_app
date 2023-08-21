@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      
+      theme: ThemeData(useMaterial3: true),
       routes: {
         PagesNames.welcomeScreenName:(context) => const WelcomeScreen(),
         PagesNames.loadingScreenName:(context) => const LoadingScreenView(),
