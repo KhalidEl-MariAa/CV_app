@@ -14,8 +14,8 @@ class _HomeScreenViewState extends State<HomeScreenView> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
-        body: InstructionsView(),
+        backgroundColor: Colors.blueGrey,
+        body: const InstructionsView(),
         bottomNavigationBar: Container(
           decoration: BoxDecoration(
            gradient: const LinearGradient(
