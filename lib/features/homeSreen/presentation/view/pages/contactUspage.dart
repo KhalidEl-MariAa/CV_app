@@ -1,4 +1,5 @@
 import 'package:cv_app/core/utils/fonts.dart';
+import 'package:cv_app/core/utils/pagesName.dart';
 import 'package:flutter/material.dart';
 
 class ContactUsView extends StatelessWidget {
@@ -25,7 +26,9 @@ class ContactUsView extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.black
                   ),
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.of(context).pushNamed(PagesNames.contactUsDetails);
+                  },
                  child: Text('Contact Us',style: bodyfont.copyWith(color: Colors.white),)) ],
                 ),
              ),]
