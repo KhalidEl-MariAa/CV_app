@@ -1,5 +1,7 @@
 import 'package:cv_app/core/utils/fonts.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/pages/InstructionPage.dart';
+import 'package:cv_app/features/homeSreen/presentation/view/pages/contactUspage.dart';
+import 'package:cv_app/features/homeSreen/presentation/view/pages/createResume.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 class HomeScreenView extends StatefulWidget {
@@ -8,14 +10,15 @@ class HomeScreenView extends StatefulWidget {
   @override
   State<HomeScreenView> createState() => _HomeScreenViewState();
 }
-
+int selectedIndex=0;
+var pges= [const InstructionsView(),const CreateResumeView(),const ContactUsView()];
 class _HomeScreenViewState extends State<HomeScreenView> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.blueGrey,
-        body: const InstructionsView(),
+        body: pges[selectedIndex],
         bottomNavigationBar: Container(
           decoration: BoxDecoration(
            gradient: const LinearGradient(
@@ -25,6 +28,12 @@ class _HomeScreenViewState extends State<HomeScreenView> {
           ),
 
           child: GNav(
+            selectedIndex: selectedIndex,
+            onTabChange: (value) {
+              setState(() {
+                selectedIndex=value;
+              });
+            },
             iconSize: 25,
              gap: 5,
              textStyle: titlefont.copyWith(color: Colors.amber),
