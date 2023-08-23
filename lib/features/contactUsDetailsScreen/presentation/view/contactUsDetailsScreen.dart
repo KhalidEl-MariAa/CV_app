@@ -1,5 +1,6 @@
 import 'package:cv_app/core/utils/fonts.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_email_sender/flutter_email_sender.dart';
 
 class ContactUsDetailsView extends StatefulWidget {
   const ContactUsDetailsView({super.key});
@@ -8,6 +9,7 @@ class ContactUsDetailsView extends StatefulWidget {
   State<ContactUsDetailsView> createState() => _ContactUsDetailsViewState();
 }
 final GlobalKey<FormState> _key =GlobalKey();
+late String body;
 class _ContactUsDetailsViewState extends State<ContactUsDetailsView> {
   @override
   Widget build(BuildContext context) {
@@ -31,6 +33,9 @@ class _ContactUsDetailsViewState extends State<ContactUsDetailsView> {
                         style: titlefont.copyWith(fontSize: MediaQuery.of(context).size.width*0.05,fontWeight: FontWeight.bold),),
                       ),
                     TextFormField(
+                      onChanged: (value) {
+                        body=value;
+                      },
                       style:bodyfont ,
                       validator: (value) {
                         if(value!.isEmpty){
@@ -53,9 +58,19 @@ class _ContactUsDetailsViewState extends State<ContactUsDetailsView> {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.black
                       ),
-                      onPressed: (){
+                      onPressed: ()async {
                         if(_key.currentState!.validate()){
-                          
+                          try{
+                             var email=Email(
+                              subject: 'Email from cv app user',
+                              recipients: ['khalidmaria13@gmail.com'],
+                              body:body 
+                             );
+                             await FlutterEmailSender.send(email);
+                          }
+                          catch(e){
+                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('There was an error, try later')));
+                          }
                         }
                       },
                        child: Text(
