@@ -1,4 +1,5 @@
 import 'package:cv_app/core/utils/pagesName.dart';
+import 'package:cv_app/features/contactUsDetailsScreen/presentation/view/contactUsDetailsScreen.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/homeScreenView.dart';
 import 'package:cv_app/features/loadingScreen/presentation/view/loadinScreenView.dart';
 import 'package:cv_app/features/welcomeScreem/presentation/view/welcomeScreenView.dart';
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
       routes: {
         PagesNames.welcomeScreenName:(context) => const WelcomeScreen(),
         PagesNames.loadingScreenName:(context) => const LoadingScreenView(),
-        PagesNames.homeScreenName:(context) => const HomeScreenView()
+        PagesNames.homeScreenName:(context) => const HomeScreenView(),
+        PagesNames.contactUsDetails:(context) => const ContactUsDetailsView()
       },
       initialRoute: PagesNames.welcomeScreenName,
     );
