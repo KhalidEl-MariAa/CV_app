@@ -1,6 +1,6 @@
-import 'package:cv_app/features/homeSreen/presentation/view/widgets/instructionsSecondHalf.dart';
+import 'package:cv_app/features/homeSreen/presentation/view/widgets/instructionsPageWidgets/instructionsSecondHalf.dart';
 import 'package:flutter/material.dart';
-import '../widgets/instructionsFirstHalf.dart';
+import '../widgets/instructionsPageWidgets/instructionsFirstHalf.dart';
 
 
 class InstructionsView extends StatefulWidget {
