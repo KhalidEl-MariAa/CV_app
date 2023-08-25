@@ -1,4 +1,4 @@
-import 'package:cv_app/core/utils/fonts.dart';
+import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/personalDetails.dart';
 import 'package:flutter/material.dart';
 
 class CreateResumeView extends StatefulWidget {
@@ -16,122 +16,33 @@ class _CreateResumeViewState extends State<CreateResumeView> {
       key: _globalKey,
       child: Container(
         color: Colors.white,
-        child: CustomScrollView(
-          slivers: [
-            SliverFillRemaining(
-              hasScrollBody: false,
-              child: Column(
+        child: NestedScrollView(
+          reverse: true,
+            headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {  
+              return [const SliverAppBar(
+                pinned: true,
+                flexibleSpace: Center(child: Text('heloo')),
+                backgroundColor: Colors.white,
+                foregroundColor: Colors.white,
+                
+                )];
+            },
+             
+              body: Column(
                 children: [
-                  const SizedBox(height: 20,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                   Icon(Icons.person_2_sharp,size: 50,color: Colors.black.withOpacity(0.64),),const SizedBox(width: 10,)
-                  ,Text('Personal details:',style: titlefont.copyWith(fontSize: 20,textBaseline: TextBaseline.alphabetic,fontWeight: FontWeight.bold),)
-                  ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 13),
-                    child: TextFormField(
-                      validator: (value) {
-                        if(value!.isEmpty){
-                          return "Can't be empty";
-                        }
-                        return null;
-                      },
-                      style:bodyfont ,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(35)),
-                        hintText: 'Full name',
-                        hintStyle: bodyfont,
-                        prefixIcon: const Icon(Icons.draw_outlined,size: 30,)
-                        
-                      ),
-                    ),
-                  ),
-                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 13),
-                    child: TextFormField(
-                      keyboardType: TextInputType.number,
-                      validator: (value) {
-                         if(value!.isEmpty){
-                          return "Can't be empty";
-                        }
-                        return null;
-                      },
-                      style:bodyfont ,
-                      decoration: InputDecoration(
-                        prefixIcon:const Icon(Icons.phone,size: 30,),
-                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(35)),
-                        hintText: 'Phone Number',
-                        hintStyle: bodyfont,
-                        
-                      ),
-                    ),
-                  ),
-                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 13),
-                    child: TextFormField(
-                      keyboardType: TextInputType.emailAddress,
-                      validator: (value) {
-                        if(value!.isEmpty){
-                          return "Can't be empty";
-                        }
-                        return null;
-                      },
-                      style:bodyfont ,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(35)),
-                        hintText: 'Email',
-                        hintStyle: bodyfont,
-                        prefixIcon: const Icon(Icons.email,size: 30,)
-                        
-                      ),
-                    ),
-                  ),
-                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 13),
-                    child: TextFormField(
-                      validator: (value) {
-                         if(value!.isEmpty){
-                          return "Can't be empty";
-                        }
-                        return null;
-                      },
-                      style:bodyfont ,
-                      decoration: InputDecoration(
-                        prefixIcon:const Icon(Icons.home,size: 30,),
-                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(35)),
-                        hintText: 'Address',
-                        hintStyle: bodyfont,
-                        
-                      ),
-                    ),
-                  ),
-                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 13),
-                    child: TextFormField(
-                      keyboardType: TextInputType.emailAddress,
-                      validator: (value) {
-                        if(value!.isEmpty){
-                          return "Can't be empty";
-                        }
-                        return null;
-                      },
-                      style:bodyfont ,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(35)),
-                        hintText: 'Learning degree',
-                        hintStyle: bodyfont,
-                        prefixIcon: const Icon(Icons.email,size: 30,)
-                        
-                      ),
-                    ),
-                  ),
+                 const  PersonalDetailsView(),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(backgroundColor: Colors.amber),
+                    onPressed: () {
+                      if(_globalKey.currentState!.validate()){
+
+                      }
+                    
+                  }, child: const Text('Done'))
                 ],
               ),
-            )
-          ],
+            
+           
         ),
       ),
     );
