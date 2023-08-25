@@ -98,6 +98,25 @@ class PersonalDetailsView extends StatelessWidget {
                    Padding(
                     padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 13),
                     child: TextFormField(
+                      validator: (value) {
+                        if(value!.isEmpty){
+                          return "Can't be empty";
+                        }
+                        return null;
+                      },
+                      style:bodyfont ,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(35)),
+                        hintText: 'City',
+                        hintStyle: bodyfont,
+                        prefixIcon: const Icon(Icons.location_on,size: 30,)
+                        
+                      ),
+                    ),
+                  ),
+                   Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 13),
+                    child: TextFormField(
                       keyboardType: TextInputType.emailAddress,
                       validator: (value) {
                         if(value!.isEmpty){
