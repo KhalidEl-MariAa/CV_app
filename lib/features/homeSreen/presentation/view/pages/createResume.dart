@@ -44,7 +44,7 @@ class _CreateResumeViewState extends State<CreateResumeView> {
                     separatorBuilder: (context, index) => const SizedBox(height: 20,),
                          shrinkWrap: true,
                          physics: const NeverScrollableScrollPhysics(),
-                         itemCount: 1,
+                         itemCount: skillNum,
                          itemBuilder: (context, index) => TextFormField(
                          validator: (value) {
                            if(value!.isEmpty){
@@ -57,11 +57,39 @@ class _CreateResumeViewState extends State<CreateResumeView> {
                            border: OutlineInputBorder(borderRadius: BorderRadius.circular(35)),
                            hintText: 'Skill',
                            hintStyle: bodyfont,
-                           suffixIcon: GestureDetector(
+                           suffixIcon:skillNum==1? 
+                            GestureDetector(
+                            child: const Icon(Icons.add,size: 30,),
                             onTap: (){
-                             
+                             setState(() {
+                               skillNum++;
+                             });
                             },
-                            child: const Icon(Icons.add,size: 30,))
+                            )
+                            :
+                             Row(
+                              
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                               GestureDetector(
+                            child: const Icon(Icons.disabled_by_default_outlined,size: 28,),
+                             onTap: (){
+                             setState(() {
+                               skillNum--;
+                             });
+                            },),
+
+                             GestureDetector(
+                            child: const Icon(Icons.add,size: 30,),
+                            onTap: (){
+                             setState(() {
+                               skillNum++;
+                             });
+                            },
+                            ),
+                           const SizedBox(width: 5,)
+                            ],) 
+
                            
                            
                          ),
