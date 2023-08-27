@@ -1,9 +1,11 @@
-import 'package:cv_app/core/utils/fonts.dart';
+
 import 'package:cv_app/features/homeSreen/presentation/view/pages/InstructionPage.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/pages/contactUspage.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/pages/createResume.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+
+import '../../../../core/utils/constants/const.dart';
 class HomeScreenView extends StatefulWidget {
   const HomeScreenView({super.key});
 

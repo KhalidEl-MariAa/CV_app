@@ -1,6 +1,7 @@
-import 'package:cv_app/core/utils/fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
+
+import '../../../../core/utils/constants/const.dart';
 
 class ContactUsDetailsView extends StatefulWidget {
   const ContactUsDetailsView({super.key});

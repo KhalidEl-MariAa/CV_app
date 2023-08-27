@@ -1,6 +1,8 @@
-import 'package:cv_app/core/utils/fonts.dart';
+
 import 'package:cv_app/core/utils/pagesName.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../../core/utils/constants/const.dart';
 
 class ContactUsView extends StatelessWidget {
   const ContactUsView({super.key});

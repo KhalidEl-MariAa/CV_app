@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../core/utils/fonts.dart';
+import '../../../../../../core/utils/constants/const.dart';
 
 class PersonalDetailsView extends StatelessWidget {
   const PersonalDetailsView({super.key});

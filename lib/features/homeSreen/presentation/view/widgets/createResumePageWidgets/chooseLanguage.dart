@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:multi_select_flutter/chip_display/multi_select_chip_display.dart';
 import 'package:multi_select_flutter/dialog/multi_select_dialog_field.dart';
-
-import '../../../../../../core/utils/fonts.dart';
+import '../../../../../../core/utils/constants/const.dart';
 import '../../../../../../core/utils/pagesName.dart';
 
 class ChooseLanguagesView extends StatelessWidget {

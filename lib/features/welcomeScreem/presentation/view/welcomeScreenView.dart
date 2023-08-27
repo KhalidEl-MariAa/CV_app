@@ -1,7 +1,9 @@
-import 'package:cv_app/core/utils/fonts.dart';
+
 import 'package:cv_app/core/utils/pagesName.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+
+import '../../../../core/utils/constants/const.dart';
 
 
 class WelcomeScreen extends StatefulWidget {
@@ -57,7 +59,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.black,
               textStyle: bodyfont.copyWith(),
-              fixedSize: Size(100, 100),
+              fixedSize: const Size(100, 100),
               
             ),
             child: const Padding(
