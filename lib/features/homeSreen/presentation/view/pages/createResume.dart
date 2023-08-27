@@ -17,33 +17,21 @@ class _CreateResumeViewState extends State<CreateResumeView> {
       key: _globalKey,
       child: Container(
         color: Colors.white,
-        child: NestedScrollView(
-          
-            headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {  
-              return [const SliverAppBar(
-                collapsedHeight: 80,
-                pinned: true,
-                flexibleSpace: Center(child: Text('heloo')),
-                backgroundColor: Colors.white,
-                foregroundColor: Colors.white,
-                
-                )];
-            },
-             
-              body:  ListView(
-                children: [Column(
+        child: CustomScrollView(
+           
+              slivers:[SliverFillRemaining(
+                hasScrollBody: false,
+                child: Column(
                   children: [
                     const PersonalDetailsView(),
                     const SizedBox(height: 20,),
                     Divider(color: Colors.black.withOpacity(0.5),thickness: 0.7,),
                    const SizedBox(height: 20,),
-                   const ChooseLanguagesView()
-                           
-                  ],
-                ),]
-              ),
-            
-           
+                   const ChooseLanguagesView(),
+                   
+                           ],
+                ),
+              ),]
         ),
       ),
     );
