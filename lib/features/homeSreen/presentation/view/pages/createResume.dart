@@ -36,8 +36,8 @@ class _CreateResumeViewState extends State<CreateResumeView> {
                             ],
                  ),
                ),
-               SliverToBoxAdapter(
-                child: const AddSkillsView()
+              const SliverToBoxAdapter(
+                child:  AddSkillsView()
                     
                     
                )]

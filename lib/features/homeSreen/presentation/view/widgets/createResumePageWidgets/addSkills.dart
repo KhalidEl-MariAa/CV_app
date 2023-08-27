@@ -1,3 +1,4 @@
+import 'package:cv_app/features/homeSreen/presentation/view/widgets/customTextField.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../../core/utils/constants/const.dart';
@@ -20,19 +21,11 @@ class _AddSkillsViewState extends State<AddSkillsView> {
                          shrinkWrap: true,
                          physics: const NeverScrollableScrollPhysics(),
                          itemCount: skillNum,
-                         itemBuilder: (context, index) => TextFormField(
-                         validator: (value) {
-                           if(value!.isEmpty){
-                             return "Can't be empty";
-                           }
-                           return null;
-                         },
-                         style:bodyfont ,
-                         decoration: InputDecoration(
-                           border: OutlineInputBorder(borderRadius: BorderRadius.circular(35)),
-                           hintText: 'Skill',
-                           hintStyle: bodyfont,
-                           suffixIcon:skillNum==1? 
+                         itemBuilder: (context, index) => CustomTextField(
+                          validateString:"Can't be empty" ,
+                           hintText: 'skills', 
+                           hintstyle: bodyfont,
+                           suffixIcon: skillNum==1? 
                             GestureDetector(
                             child: const Icon(Icons.add,size: 30,),
                             onTap: (){
@@ -61,14 +54,11 @@ class _AddSkillsViewState extends State<AddSkillsView> {
                                skillNum++;
                              });
                             },
-                            ),
-                           const SizedBox(width: 5,)
-                            ],) 
-
-                           
-                           
-                         ),
-                       ),),
-                );
+                            ),])
+    )
+    )
+    );
+    
+                
   }
 }

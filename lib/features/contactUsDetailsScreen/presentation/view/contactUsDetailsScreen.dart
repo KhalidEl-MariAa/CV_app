@@ -1,3 +1,4 @@
+import 'package:cv_app/features/homeSreen/presentation/view/widgets/customTextField.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
 
@@ -33,27 +34,12 @@ class _ContactUsDetailsViewState extends State<ContactUsDetailsView> {
                         "We can't know your identity so you can say what you want, if you need from us to recommunicate with you after your message ... please write your email or phone in the end of your message",
                         style: titlefont.copyWith(fontSize: MediaQuery.of(context).size.width*0.05,fontWeight: FontWeight.bold),),
                       ),
-                    TextFormField(
-                      onChanged: (value) {
-                        body=value;
-                      },
-                      style:bodyfont ,
-                      validator: (value) {
-                        if(value!.isEmpty){
-                          return "Can't send nothing!";
-                        }
-                        return null;
-                      },
-                      decoration: InputDecoration(
-                        hintText: 'Try to be clear and describe your problem' ,
-                        labelText: 'Describe your purpose',
-                        labelStyle: bodyfont,
-                        hintStyle: titlefont,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25),
-                        )
-                      ),
-                    ),
+                    CustomTextField(
+                      validateString: "Can;t send Nothing", 
+                      hintText: 'Try to be clear',
+                       hintstyle: bodyfont,
+                       labelText: 'Describe your purpose',
+                       ),
                     const SizedBox(height: 20,),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(

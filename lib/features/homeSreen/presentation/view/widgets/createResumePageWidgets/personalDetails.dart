@@ -1,3 +1,4 @@
+import 'package:cv_app/features/homeSreen/presentation/view/widgets/customTextField.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../../core/utils/constants/const.dart';
@@ -10,129 +11,67 @@ class PersonalDetailsView extends StatelessWidget {
     return  Column(
       children: [
         const SizedBox(height: 20,),
-                  Row(
+        
+        Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                    Icon(Icons.person_2_sharp,size: 50,color: Colors.black.withOpacity(0.64),),const SizedBox(width: 10,)
                   ,Text('Personal details:',style: titlefont.copyWith(fontSize: 20,textBaseline: TextBaseline.alphabetic,fontWeight: FontWeight.bold),)
                   ],
                   ),
-                  Padding(
+
+      Padding(
                     padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 13),
-                    child: TextFormField(
-                      validator: (value) {
-                        if(value!.isEmpty){
-                          return "Can't be empty";
-                        }
-                        return null;
-                      },
-                      style:bodyfont ,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(35)),
-                        hintText: 'Full name',
-                        hintStyle: bodyfont,
-                        prefixIcon: const Icon(Icons.draw_outlined,size: 30,)
-                        
-                      ),
-                    ),
+                    child: CustomTextField(
+                      validateString: "Can't be empty",
+                       hintText: 'Full Name',
+                        hintstyle: bodyfont,
+                        prefixIcon: const Icon(Icons.draw_outlined,size: 30,), )
                   ),
-                   Padding(
+
+      Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 13),
-                    child: TextFormField(
-                      keyboardType: TextInputType.number,
-                      validator: (value) {
-                         if(value!.isEmpty){
-                          return "Can't be empty";
-                        }
-                        return null;
-                      },
-                      style:bodyfont ,
-                      decoration: InputDecoration(
-                        prefixIcon:const Icon(Icons.phone,size: 30,),
-                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(35)),
-                        hintText: 'Phone Number',
-                        hintStyle: bodyfont,
-                        
-                      ),
-                    ),
+                    child: CustomTextField(
+                      validateString: "Can't be empty",
+                       hintText: 'Phone Number', 
+                       hintstyle: bodyfont,
+                       prefixIcon: const Icon(Icons.phone,size: 30,),
+                       inputType: TextInputType.phone,)
                   ),
-                   Padding(
+
+      Padding(
                     padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 13),
-                    child: TextFormField(
-                      keyboardType: TextInputType.emailAddress,
-                      validator: (value) {
-                        if(value!.isEmpty){
-                          return "Can't be empty";
-                        }
-                        return null;
-                      },
-                      style:bodyfont ,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(35)),
-                        hintText: 'Email',
-                        hintStyle: bodyfont,
-                        prefixIcon: const Icon(Icons.email,size: 30,)
-                        
-                      ),
-                    ),
+                    child: CustomTextField(
+                      validateString: "Can't be empty",
+                       hintText: 'Email',
+                        hintstyle: bodyfont,
+                        prefixIcon: const Icon(Icons.email,size: 30,),)
                   ),
-                   Padding(
+
+      Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 13),
-                    child: TextFormField(
-                      validator: (value) {
-                         if(value!.isEmpty){
-                          return "Can't be empty";
-                        }
-                        return null;
-                      },
-                      style:bodyfont ,
-                      decoration: InputDecoration(
-                        prefixIcon:const Icon(Icons.home,size: 30,),
-                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(35)),
-                        hintText: 'Address',
-                        hintStyle: bodyfont,
-                        
-                      ),
-                    ),
+                    child: CustomTextField(
+                      validateString: "Can't be empty",
+                       hintText: 'Address',
+                       hintstyle: bodyfont,
+                       prefixIcon: const Icon(Icons.home,size: 30,),)
                   ),
-                   Padding(
+
+      Padding(
                     padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 13),
-                    child: TextFormField(
-                      validator: (value) {
-                        if(value!.isEmpty){
-                          return "Can't be empty";
-                        }
-                        return null;
-                      },
-                      style:bodyfont ,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(35)),
-                        hintText: 'City',
-                        hintStyle: bodyfont,
-                        prefixIcon: const Icon(Icons.location_on,size: 30,)
-                        
-                      ),
-                    ),
+                    child: CustomTextField(
+                      validateString:"Can't be empty",
+                       hintText: 'City', 
+                       hintstyle: bodyfont,
+                       prefixIcon: const Icon(Icons.location_on,size: 30,),)
                   ),
-                   Padding(
+
+      Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 13),
-                    child: TextFormField(
-                      keyboardType: TextInputType.emailAddress,
-                      validator: (value) {
-                        if(value!.isEmpty){
-                          return "Can't be empty";
-                        }
-                        return null;
-                      },
-                      style:bodyfont ,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(35)),
-                        hintText: 'Learning degree',
-                        hintStyle: bodyfont,
-                        prefixIcon: const Icon(Icons.email,size: 30,)
-                        
-                      ),
-                    ),
+                    child: CustomTextField(
+                      validateString: "Can't be empty",
+                      hintText: 'Learning degree',
+                       hintstyle: bodyfont)
                   ),
       ],
     );
