@@ -31,17 +31,17 @@ class _AddImageViewState extends State<AddImageView> {
                         backgroundColor: Colors.black
                       ),
                       onPressed: ()async {
-                         pickedimag= await imagepicker.pickImage(source: ImageSource.camera);
+                         try{pickedimag= await imagepicker.pickImage(source: ImageSource.camera);
                         if (pickedimag!=null) {
                           imagefile=File(pickedimag.path);
                           setState(() {
                             
                           });
-                          
+                          }
+                        else{}
                         }
-                        
-                        else{
-
+                        catch(e){
+                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('There was an error..try again')));
                         }
                       },
                        child: Row(children: [Text('Take a photo',style: bodyfont,),const SizedBox(width: 6,),Icon(Icons.camera_alt)]
@@ -52,20 +52,22 @@ class _AddImageViewState extends State<AddImageView> {
                         backgroundColor: Colors.black
                       ),
                       onPressed: ()async {
-                         pickedimag= await imagepicker.pickImage(source: ImageSource.gallery);
+                        try{ 
+                        pickedimag= await imagepicker.pickImage(source: ImageSource.gallery);
                         if (pickedimag!=null) {
                           imagefile=File(pickedimag.path);
                           
                           setState(() {
                             
                           });
-                          
-                        }
+                           }
                         
-                        else{
-
+                        else{}}
+                        catch(e){
+                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('There was an error..try again')));
                         }
-                      },
+                        }
+                      ,
                        child:  Row(children: [Text('From Gallery',style: bodyfont,),
                        const SizedBox(width: 6,),const Icon(Icons.add_photo_alternate)]
                        )
