@@ -19,7 +19,7 @@ class _HomeScreenViewState extends State<HomeScreenView> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.blueGrey,
+        backgroundColor:selectedIndex==1? Colors.purple:Colors.blueGrey,
         body: pges[selectedIndex],
         bottomNavigationBar: Container(
           decoration: BoxDecoration(
