@@ -1,4 +1,5 @@
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/addCourses.dart';
+import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/addImage.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/addSkills.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/chooseLanguage.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/personalDetails.dart';
@@ -36,7 +37,10 @@ class _CreateResumeViewState extends State<CreateResumeView> {
                      const AddSkillsView(),
                      Divider(color: Colors.black.withOpacity(0.5),thickness: 0.7,),
                      const SizedBox(height: 20,),
-                     const AddCourses()
+                     const AddCourses(),
+                      Divider(color: Colors.black.withOpacity(0.5),thickness: 0.7,),
+                     const SizedBox(height: 20,),
+                     const AddImageView()
                      
                             ],
                  ),
