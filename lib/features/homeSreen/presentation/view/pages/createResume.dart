@@ -31,16 +31,13 @@ class _CreateResumeViewState extends State<CreateResumeView> {
                     const SizedBox(height: 20,),
                     const ChooseLanguagesView(),
                      Divider(color: Colors.black.withOpacity(0.5),thickness: 0.7,),
-                     const SizedBox(height: 20,)
+                     const SizedBox(height: 20,),
+                     const AddSkillsView()
                      
                             ],
                  ),
                ),
-              const SliverToBoxAdapter(
-                child:  AddSkillsView()
-                    
-                    
-               )]
+              ]
         ),
       ),
     );
