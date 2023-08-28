@@ -11,17 +11,20 @@ class PersonalDetailsView extends StatelessWidget {
     return  Column(
       children: [
         const SizedBox(height: 20,),
-        
+
         Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                   Icon(Icons.person_2_sharp,size: 50,color: Colors.black.withOpacity(0.64),),const SizedBox(width: 10,)
-                  ,Text('Personal details:',style: titlefont.copyWith(fontSize: 20,textBaseline: TextBaseline.alphabetic,fontWeight: FontWeight.bold),)
+                   Icon(Icons.person_2_sharp,size: 50,color: Colors.black.withOpacity(0.64),),const SizedBox(width: 3,)
+                  ,Padding(
+                    padding: const EdgeInsets.only(top:10.0),
+                    child: Text('Personal details :',style: titlefont.copyWith(fontSize: 20,textBaseline: TextBaseline.alphabetic,fontWeight: FontWeight.bold),),
+                  )
                   ],
                   ),
 
       Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 13),
+                    padding: const EdgeInsets.symmetric(vertical: 27,horizontal: 13),
                     child: CustomTextField(
                       validateString: "Can't be empty",
                        hintText: 'Full Name',
@@ -40,7 +43,7 @@ class PersonalDetailsView extends StatelessWidget {
                   ),
 
       Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 13),
+                    padding: const EdgeInsets.symmetric(vertical: 27,horizontal: 13),
                     child: CustomTextField(
                       validateString: "Can't be empty",
                        hintText: 'Email',
@@ -58,7 +61,7 @@ class PersonalDetailsView extends StatelessWidget {
                   ),
 
       Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 13),
+                    padding: const EdgeInsets.symmetric(vertical: 27,horizontal: 13),
                     child: CustomTextField(
                       validateString:"Can't be empty",
                        hintText: 'City', 
@@ -71,7 +74,8 @@ class PersonalDetailsView extends StatelessWidget {
                     child: CustomTextField(
                       validateString: "Can't be empty",
                       hintText: 'Learning degree',
-                       hintstyle: bodyfont)
+                       hintstyle: bodyfont,
+                       prefixIcon: const Icon(Icons.school,size: 30,),)
                   ),
       ],
     );
