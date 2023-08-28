@@ -40,7 +40,8 @@ class _CreateResumeViewState extends State<CreateResumeView> {
                      const AddCourses(),
                       Divider(color: Colors.black.withOpacity(0.5),thickness: 0.7,),
                      const SizedBox(height: 20,),
-                     const AddImageView()
+                     const AddImageView(),
+                     
                      
                             ],
                  ),

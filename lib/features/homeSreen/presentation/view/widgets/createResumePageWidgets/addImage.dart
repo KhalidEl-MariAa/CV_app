@@ -15,65 +15,70 @@ class AddImageView extends StatefulWidget {
 class _AddImageViewState extends State<AddImageView> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-    children: [ CircleAvatar(
-                foregroundImage: imagefile==null?  null : FileImage(imagefile!)  ,
-                radius: 65,
-                child: imagefile!=null? null :const Icon(
-                Icons.person ,size: 60,)
-                  ),
-                  const SizedBox(height: 10,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black
-                      ),
-                      onPressed: ()async {
-                         try{pickedimag= await imagepicker.pickImage(source: ImageSource.camera);
-                        if (pickedimag!=null) {
-                          imagefile=File(pickedimag.path);
-                          setState(() {
-                            
-                          });
-                          }
-                        else{}
-                        }
-                        catch(e){
-                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('There was an error..try again')));
-                        }
-                      },
-                       child: Row(children: [Text('Take a photo',style: bodyfont,),const SizedBox(width: 6,),Icon(Icons.camera_alt)]
-                       )
-                       ),const SizedBox(width: 10,),
-                       ElevatedButton(
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 20),
+      child: Column(
+      children: [ CircleAvatar(
+                  foregroundImage: imagefile==null?  null : FileImage(imagefile!)  ,
+                  radius: 65,
+                  child: imagefile!=null? null :const Icon(
+                  Icons.person ,size: 60,)
+                    ),
+                    const SizedBox(height: 10,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                      ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black
-                      ),
-                      onPressed: ()async {
-                        try{ 
-                        pickedimag= await imagepicker.pickImage(source: ImageSource.gallery);
-                        if (pickedimag!=null) {
-                          imagefile=File(pickedimag.path);
-                          
-                          setState(() {
+                          backgroundColor: Colors.black
+                        ),
+                        onPressed: ()async {
+                           try{pickedimag= await imagepicker.pickImage(source: ImageSource.camera);
+                          if (pickedimag!=null) {
+                            imagefile=File(pickedimag.path);
+                            setState(() {
+                              
+                            });
+                            }
+                          else{}
+                          }
+                          catch(e){
+                            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('There was an error..try again')));
+                          }
+                        },
+                         child: Row(children: [Text('Take a photo',style: bodyfont.copyWith(color: Colors.white),),
+                         const SizedBox(width: 6,),
+                         const Icon(Icons.camera_alt,color: Colors.white,)]
+                         )
+                         ),const SizedBox(width: 10,),
+                         ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black
+                        ),
+                        onPressed: ()async {
+                          try{ 
+                          pickedimag= await imagepicker.pickImage(source: ImageSource.gallery);
+                          if (pickedimag!=null) {
+                            imagefile=File(pickedimag.path);
                             
-                          });
-                           }
-                        
-                        else{}}
-                        catch(e){
-                          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('There was an error..try again')));
-                        }
-                        }
-                      ,
-                       child:  Row(children: [Text('From Gallery',style: bodyfont,),
-                       const SizedBox(width: 6,),const Icon(Icons.add_photo_alternate)]
-                       )
-                       )
-                  ],),
-              ],
+                            setState(() {
+                              
+                            });
+                             }
+                          
+                          else{}}
+                          catch(e){
+                            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('There was an error..try again')));
+                          }
+                          }
+                        ,
+                         child:  Row(children: [Text('From Gallery',style: bodyfont.copyWith(color: Colors.white),),
+                         const SizedBox(width: 6,),const Icon(Icons.add_photo_alternate,color: Colors.white,)]
+                         )
+                         )
+                    ],),
+                ],
+      ),
     );
   }
 }
