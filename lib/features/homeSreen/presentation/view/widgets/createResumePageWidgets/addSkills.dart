@@ -9,6 +9,7 @@ class AddSkillsView extends StatefulWidget {
   @override
   State<AddSkillsView> createState() => _AddSkillsViewState();
 }
+int skillNum = 1;
 
 class _AddSkillsViewState extends State<AddSkillsView> {
   @override
@@ -21,8 +22,11 @@ class _AddSkillsViewState extends State<AddSkillsView> {
         Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                   Icon(Icons.auto_graph_outlined,size: 50,color: Colors.black.withOpacity(0.64),),const SizedBox(width: 10,)
-                  ,Text('Skills:',style: titlefont.copyWith(fontSize: 20,textBaseline: TextBaseline.alphabetic,fontWeight: FontWeight.bold),)
+                   Icon(Icons.leaderboard_sharp,size: 50,color: Colors.black.withOpacity(0.64),),const SizedBox(width: 10,)
+                  ,Padding(
+                    padding: const EdgeInsets.only(top: 20),
+                    child: Text('Skills :',style: titlefont.copyWith(fontSize: 20,textBaseline: TextBaseline.alphabetic,fontWeight: FontWeight.bold),),
+                  )
                   ],
                   ),
                  const SizedBox(height: 20,),
@@ -34,7 +38,7 @@ class _AddSkillsViewState extends State<AddSkillsView> {
                              itemCount: skillNum,
                              itemBuilder: (context, index) => CustomTextField(
                               validateString:"Can't be empty" ,
-                               hintText: 'skills', 
+                               hintText: 'Skills', 
                                hintstyle: bodyfont,
                                suffixIcon: skillNum==1? 
                                 GestureDetector(
