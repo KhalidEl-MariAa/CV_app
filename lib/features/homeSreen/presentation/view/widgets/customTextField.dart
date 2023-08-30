@@ -17,6 +17,7 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      
                        onChanged: onchange,
                       keyboardType:inputType ,
                       validator: (value) {
@@ -29,6 +30,7 @@ class CustomTextField extends StatelessWidget {
                       decoration: InputDecoration(
                         border: OutlineInputBorder(borderRadius: BorderRadius.circular(35)),
                         hintText: hintText,
+                        hintMaxLines: 2,
                         hintStyle: hintstyle,
                         labelText: labelText,
                         prefixIcon: prefixIcon,
