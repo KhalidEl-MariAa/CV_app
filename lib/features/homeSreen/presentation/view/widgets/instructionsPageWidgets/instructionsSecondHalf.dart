@@ -20,7 +20,7 @@ class InstructionsViewSecondHalf extends StatelessWidget {
           
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal:8.0,vertical: 10),
-                    child: Text('Instructions to have a high ATP score ',
+                    child: Text('Instructions to have a high ATS score ',
                     style:titlefont.copyWith(fontSize: MediaQuery.of(context).size.width*0.05,fontWeight: FontWeight.bold) ,
                     ),
                   ),
