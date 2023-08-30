@@ -30,7 +30,7 @@ class PersonalDetailsView extends StatelessWidget {
                        hintText: 'Headline ( Your job(s) name(s) )', 
                        hintstyle: bodyfont,
                        prefixIcon: const Icon(Icons.title,size: 30,),
-                       inputType: TextInputType.none,)
+                       inputType: TextInputType.text,)
                   ),
 
       Padding(
@@ -94,7 +94,7 @@ class PersonalDetailsView extends StatelessWidget {
                        hintText: 'Summary about yourself', 
                        hintstyle: bodyfont,
                        prefixIcon: const Icon(Icons.summarize,size: 30,),
-                       inputType: TextInputType.none,)
+                       inputType: TextInputType.text,)
                   ),
 
       ],
