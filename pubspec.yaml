@@ -36,6 +36,7 @@ dependencies:
   google_nav_bar: ^5.0.6
   image_picker: ^1.0.2
   introduction_screen: ^3.1.11
+  lite_rolling_switch: ^1.0.1
   loading_animation_widget: ^1.2.0+4
   multi_select_flutter: ^4.1.3
 
