@@ -22,6 +22,16 @@ class PersonalDetailsView extends StatelessWidget {
                   )
                   ],
                   ),
+                  
+      Padding(
+                    padding: const EdgeInsets.only(top:27,left: 13,right: 13),
+                    child: CustomTextField(
+                      validateString: "Can't be empty",
+                       hintText: 'Headline ( Your job(s) name(s) )', 
+                       hintstyle: bodyfont,
+                       prefixIcon: const Icon(Icons.title,size: 30,),
+                       inputType: TextInputType.none,)
+                  ),
 
       Padding(
                     padding: const EdgeInsets.symmetric(vertical: 27,horizontal: 13),
@@ -73,10 +83,20 @@ class PersonalDetailsView extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 13),
                     child: CustomTextField(
                       validateString: "Can't be empty",
-                      hintText: 'Learning degree',
+                      hintText: 'Learning degree (Fresh graduate - Graduate since 2021)',
                        hintstyle: bodyfont,
                        prefixIcon: const Icon(Icons.school,size: 30,),)
                   ),
+                  Padding(
+                    padding: const EdgeInsets.only(top:27,left: 13,right: 13),
+                    child: CustomTextField(
+                      validateString: "Can't be empty",
+                       hintText: 'Summary about yourself', 
+                       hintstyle: bodyfont,
+                       prefixIcon: const Icon(Icons.summarize,size: 30,),
+                       inputType: TextInputType.none,)
+                  ),
+
       ],
     );
   }
