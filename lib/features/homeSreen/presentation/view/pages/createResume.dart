@@ -1,6 +1,7 @@
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/addCourses.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/addImage.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/addSkills.dart';
+import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/add_Workexp.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/chooseLanguage.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/personalDetails.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +34,7 @@ class _CreateResumeViewState extends State<CreateResumeView> {
                      Divider(color: Colors.black.withOpacity(0.5),thickness: 0.7,),
                     const SizedBox(height: 20,),
                     const AddCourses(),
-                     Divider(color: Colors.black.withOpacity(0.5),thickness: 0.7,),
+                      Divider(color: Colors.black.withOpacity(0.5),thickness: 0.7,),
                      const SizedBox(height: 20,),
                      const AddSkillsView(),
                      Divider(color: Colors.black.withOpacity(0.5),thickness: 0.7,),
@@ -41,9 +42,10 @@ class _CreateResumeViewState extends State<CreateResumeView> {
                      const ChooseLanguagesView(),
                       Divider(color: Colors.black.withOpacity(0.5),thickness: 0.7,),
                      const SizedBox(height: 20,),
-                     const AddImageView(),
+                     const AddWorkExperienceView(),
                      Divider(color: Colors.black.withOpacity(0.5),thickness: 0.7,),
                      const SizedBox(height: 20,),
+                     const AddImageView()
 
                      
                      
