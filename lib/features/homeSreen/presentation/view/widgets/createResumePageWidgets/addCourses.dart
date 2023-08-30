@@ -36,7 +36,7 @@ class _AddCoursesState extends State<AddCourses> {
                        hintText: 'College', 
                        hintstyle: bodyfont,
                        prefixIcon: const Icon(Icons.business,size: 30,),
-                       inputType: TextInputType.none,)
+                       inputType: TextInputType.text,)
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 13,vertical: 17),
@@ -45,11 +45,12 @@ class _AddCoursesState extends State<AddCourses> {
                        hintText: 'University', 
                        hintstyle: bodyfont,
                        prefixIcon: const Icon(Icons.school_outlined,size: 30,),
-                       inputType: TextInputType.none,)
+                       inputType: TextInputType.text,)
                   ),
 
 
-                      ListView.separated(
+                      AnimatedCrossFade(
+                        firstChild:ListView.separated(
                         padding: const EdgeInsets.symmetric(horizontal: 13),
                         separatorBuilder: (context, index) => const SizedBox(height: 20,),
                              shrinkWrap: true,
@@ -92,7 +93,10 @@ class _AddCoursesState extends State<AddCourses> {
                                 },
                                 ),])
     )
-    ),
+    ), 
+     secondChild: const SizedBox(),
+     crossFadeState: CrossFadeState.showFirst,
+      duration: const Duration(seconds: 1))
                     ],
                   )
     );

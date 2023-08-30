@@ -19,7 +19,7 @@ class _AddSkillsViewState extends State<AddSkillsView> {
                   child: Column(
                     children: [
                        
-        Row(
+                        Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                    Icon(Icons.leaderboard_sharp,size: 50,color: Colors.black.withOpacity(0.64),),const SizedBox(width: 10,)
@@ -29,8 +29,9 @@ class _AddSkillsViewState extends State<AddSkillsView> {
                   )
                   ],
                   ),
-                 const SizedBox(height: 20,),
-                      ListView.separated(
+                                 const SizedBox(height: 20,),
+                    AnimatedCrossFade(
+                      firstChild:  ListView.separated(
                         padding: const EdgeInsets.symmetric(horizontal: 13),
                         separatorBuilder: (context, index) => const SizedBox(height: 20,),
                              shrinkWrap: true,
@@ -63,7 +64,7 @@ class _AddSkillsViewState extends State<AddSkillsView> {
                                    skillNum--;
                                  });
                                 },),
-
+                  
                                  GestureDetector(
                                 child: const Icon(Icons.add,size: 30,),
                                 onTap: (){
@@ -72,8 +73,11 @@ class _AddSkillsViewState extends State<AddSkillsView> {
                                  });
                                 },
                                 ),])
-    )
-    ),
+                    )
+                    ), 
+                     secondChild: const SizedBox(),
+                      crossFadeState: CrossFadeState.showFirst,
+                      duration:const Duration(seconds: 1))
                     ],
                   )
     );
