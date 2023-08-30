@@ -24,11 +24,31 @@ class _AddCoursesState extends State<AddCourses> {
                    Icon(Icons.book,size: 50,color: Colors.black.withOpacity(0.64),),const SizedBox(width: 3,)
                   ,Padding(
                     padding: const EdgeInsets.only(top:10),
-                    child: Text('Courses :',style: titlefont.copyWith(fontSize: 20,textBaseline: TextBaseline.alphabetic,fontWeight: FontWeight.bold),),
+                    child: Text('Education :',style: titlefont.copyWith(fontSize: 20,textBaseline: TextBaseline.alphabetic,fontWeight: FontWeight.bold),),
                   )
                   ],
                   ),
-                 const SizedBox(height: 20,),
+                 
+                 Padding(
+                    padding: const EdgeInsets.only(top:27,left: 13,right: 13),
+                    child: CustomTextField(
+                      validateString: "Can't be empty",
+                       hintText: 'College', 
+                       hintstyle: bodyfont,
+                       prefixIcon: const Icon(Icons.business,size: 30,),
+                       inputType: TextInputType.none,)
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 13,vertical: 17),
+                    child: CustomTextField(
+                      validateString: "Can't be empty",
+                       hintText: 'University', 
+                       hintstyle: bodyfont,
+                       prefixIcon: const Icon(Icons.school_outlined,size: 30,),
+                       inputType: TextInputType.none,)
+                  ),
+
+
                       ListView.separated(
                         padding: const EdgeInsets.symmetric(horizontal: 13),
                         separatorBuilder: (context, index) => const SizedBox(height: 20,),
