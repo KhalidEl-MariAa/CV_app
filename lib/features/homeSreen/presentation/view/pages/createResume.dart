@@ -14,6 +14,7 @@ class CreateResumeView extends StatefulWidget {
 
 class _CreateResumeViewState extends State<CreateResumeView> {
  final  GlobalKey<FormState> _globalKey =GlobalKey();
+ bool z =  false;
   @override
   Widget build(BuildContext context) {
     return  Form(
@@ -31,16 +32,20 @@ class _CreateResumeViewState extends State<CreateResumeView> {
                      const SizedBox(height: 20,),
                      Divider(color: Colors.black.withOpacity(0.5),thickness: 0.7,),
                     const SizedBox(height: 20,),
-                    const ChooseLanguagesView(),
+                    const AddCourses(),
                      Divider(color: Colors.black.withOpacity(0.5),thickness: 0.7,),
                      const SizedBox(height: 20,),
                      const AddSkillsView(),
                      Divider(color: Colors.black.withOpacity(0.5),thickness: 0.7,),
                      const SizedBox(height: 20,),
-                     const AddCourses(),
+                     const ChooseLanguagesView(),
                       Divider(color: Colors.black.withOpacity(0.5),thickness: 0.7,),
                      const SizedBox(height: 20,),
                      const AddImageView(),
+                     Divider(color: Colors.black.withOpacity(0.5),thickness: 0.7,),
+                     const SizedBox(height: 20,),
+
+                     
                      
                      
                             ],
