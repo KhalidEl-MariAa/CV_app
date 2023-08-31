@@ -1,4 +1,5 @@
-import 'package:cv_app/features/homeSreen/presentation/view/widgets/customTextField.dart';
+
+import 'package:cv_app/features/homeSreen/presentation/view/widgets/custom_Addfield_listview.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../../core/utils/constants/const.dart';
@@ -31,53 +32,10 @@ class _AddSkillsViewState extends State<AddSkillsView> {
                   ),
                                  const SizedBox(height: 20,),
                     AnimatedCrossFade(
-                      firstChild:  ListView.separated(
-                        padding: const EdgeInsets.symmetric(horizontal: 13),
-                        separatorBuilder: (context, index) => const SizedBox(height: 20,),
-                             shrinkWrap: true,
-                             physics: const NeverScrollableScrollPhysics(),
-                             itemCount: skillNum,
-                             itemBuilder: (context, index) => CustomTextField(
-                              validateString:"Can't be empty" ,
-                               hintText: 'Skills', 
-                               hintstyle: bodyfont,
-                               suffixIcon: skillNum==1? 
-                                GestureDetector(
-                                child: const Icon(Icons.add,size: 30,),
-                                onTap: (){
-                                 setState(() {
-                                   skillNum++;
-                                   
-                                 });
-                                 
-                                },
-                                )
-                                :
-                                 Row(
-                                  
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                   GestureDetector(
-                                child: const Icon(Icons.delete,size: 28,),
-                                 onTap: (){
-                                 setState(() {
-                                   skillNum--;
-                                 });
-                                },),
-                  
-                                 GestureDetector(
-                                child: const Icon(Icons.add,size: 30,),
-                                onTap: (){
-                                 setState(() {
-                                   skillNum++;
-                                 });
-                                },
-                                ),])
-                    )
-                    ), 
+                      firstChild:  AddFieldListview(num: skillNum, textFieldHint: 'Skills', suffixIcon: const Icon(Icons.add,size: 30,)),
                      secondChild: const SizedBox(),
                       crossFadeState: CrossFadeState.showFirst,
-                      duration:const Duration(seconds: 1))
+                      duration:const Duration(milliseconds: 700))
                     ],
                   )
     );

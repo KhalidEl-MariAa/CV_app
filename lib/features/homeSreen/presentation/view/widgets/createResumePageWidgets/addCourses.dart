@@ -1,3 +1,4 @@
+import 'package:cv_app/features/homeSreen/presentation/view/widgets/custom_Addfield_listview.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../../core/utils/constants/const.dart';
@@ -50,53 +51,10 @@ class _AddCoursesState extends State<AddCourses> {
 
 
                       AnimatedCrossFade(
-                        firstChild:ListView.separated(
-                        padding: const EdgeInsets.symmetric(horizontal: 13),
-                        separatorBuilder: (context, index) => const SizedBox(height: 20,),
-                             shrinkWrap: true,
-                             physics: const NeverScrollableScrollPhysics(),
-                             itemCount: coursesNum,
-                             itemBuilder: (context, index) => CustomTextField(
-                              validateString:"Can't be empty" ,
-                               hintText: 'Courses', 
-                               hintstyle: bodyfont,
-                               suffixIcon: coursesNum==1? 
-                                GestureDetector(
-                                child: const Icon(Icons.add,size: 30,),
-                                onTap: (){
-                                 setState(() {
-                                   coursesNum++;
-                                   
-                                 });
-                                 
-                                },
-                                )
-                                :
-                                 Row(
-                                  
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                   GestureDetector(
-                                child: const Icon(Icons.delete,size: 28,),
-                                 onTap: (){
-                                 setState(() {
-                                   coursesNum--;
-                                 });
-                                },),
-
-                                 GestureDetector(
-                                child: const Icon(Icons.add,size: 30,),
-                                onTap: (){
-                                 setState(() {
-                                   coursesNum++;
-                                 });
-                                },
-                                ),])
-    )
-    ), 
+     firstChild:AddFieldListview(num: coursesNum, textFieldHint: 'Courses', suffixIcon: const Icon(Icons.add,size: 30,)),
      secondChild: const SizedBox(),
      crossFadeState: CrossFadeState.showFirst,
-      duration: const Duration(seconds: 1))
+      duration: const Duration(milliseconds: 700 ))
                     ],
                   )
     );

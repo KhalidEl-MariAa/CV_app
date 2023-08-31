@@ -1,8 +1,8 @@
 import 'package:cv_app/core/utils/constants/const.dart';
+import 'package:cv_app/features/homeSreen/presentation/view/widgets/custom_Addfield_listview.dart';
 import 'package:flutter/material.dart';
 import 'package:lite_rolling_switch/lite_rolling_switch.dart';
 
-import '../customTextField.dart';
 
 class AddWorkExperienceView extends StatefulWidget {
   const AddWorkExperienceView({super.key});
@@ -49,51 +49,8 @@ class _AddWorkExperienceViewState extends State<AddWorkExperienceView> {
       
        AnimatedCrossFade(
         firstChild: Text('No problem the best is coming for you',style: bodyfont,),
-        secondChild: ListView.separated(
-                          padding: const EdgeInsets.symmetric(horizontal: 13),
-                          separatorBuilder: (context, index) => const SizedBox(height: 20,),
-                               shrinkWrap: true,
-                               physics: const NeverScrollableScrollPhysics(),
-                               itemCount: workNum,
-                               itemBuilder: (context, index) => CustomTextField(
-                                validateString:"Can't be empty" ,
-                                 hintText: 'ex: Position in company name', 
-                                 hintstyle: bodyfont,
-                                 suffixIcon: workNum==1? 
-                                  GestureDetector(
-                                  child: const Icon(Icons.add,size: 30,),
-                                  onTap: (){
-                                   setState(() {
-                                     workNum++;
-                                     
-                                   });
-                                   
-                                  },
-                                  )
-                                  :
-                                   Row(
-                                    
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                     GestureDetector(
-                                  child: const Icon(Icons.delete,size: 28,),
-                                   onTap: (){
-                                   setState(() {
-                                     workNum--;
-                                   });
-                                  },),
-       
-                                   GestureDetector(
-                                  child: const Icon(Icons.add,size: 30,),
-                                  onTap: (){
-                                   setState(() {
-                                     workNum++;
-                                   });
-                                  },
-                                  ),])
-           )
-           ),
-        duration: const Duration(seconds: 1),
+        secondChild: AddFieldListview(num: workNum, textFieldHint: 'ex: Position in "Company name "', suffixIcon: const Icon(Icons.add,size: 30,)),
+        duration: const Duration(milliseconds: 700),
          crossFadeState: z? CrossFadeState.showSecond:CrossFadeState.showFirst
        )
    ,const SizedBox(height: 10,)],
