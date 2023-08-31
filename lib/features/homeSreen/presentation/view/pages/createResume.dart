@@ -2,6 +2,7 @@ import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResume
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/addImage.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/addSkills.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/add_Workexp.dart';
+import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/add_project.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/chooseLanguage.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/personalDetails.dart';
 import 'package:flutter/material.dart';
@@ -29,23 +30,26 @@ class _CreateResumeViewState extends State<CreateResumeView> {
                  child: Column(
                  
                    children: [
-                     const PersonalDetailsView(),
+                          const PersonalDetailsView(),
                      const SizedBox(height: 20,),
                      Divider(color: Colors.black.withOpacity(0.5),thickness: 0.7,),
                     const SizedBox(height: 20,),
-                    const AddCourses(),
+                         const AddCourses(),
                       Divider(color: Colors.black.withOpacity(0.5),thickness: 0.7,),
                      const SizedBox(height: 20,),
-                     const AddSkillsView(),
+                         const AddSkillsView(),
                      Divider(color: Colors.black.withOpacity(0.5),thickness: 0.7,),
                      const SizedBox(height: 20,),
-                     const AddWorkExperienceView(),
+                           const AddWorkExperienceView(),
+                     Divider(color: Colors.black.withOpacity(0.5),thickness: 0.7,),
+                     const SizedBox(height: 20,),
+                          const AddProjectView(),
                       Divider(color: Colors.black.withOpacity(0.5),thickness: 0.7,),
                      const SizedBox(height: 20,),
-                     const ChooseLanguagesView(),
+                         const ChooseLanguagesView(),
                      Divider(color: Colors.black.withOpacity(0.5),thickness: 0.7,),
                      const SizedBox(height: 20,),
-                     const AddImageView()
+                          const AddImageView()
 
                      
                      
