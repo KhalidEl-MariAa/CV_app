@@ -1,5 +1,6 @@
 import 'package:cv_app/core/utils/pagesName.dart';
 import 'package:cv_app/features/contactUsDetailsScreen/presentation/view/contactUsDetailsScreen.dart';
+import 'package:cv_app/features/homeSreen/data/models/resume_Model.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/homeScreenView.dart';
 import 'package:cv_app/features/loadingScreen/presentation/view/loadinScreenView.dart';
 import 'package:cv_app/features/welcomeScreem/presentation/view/welcomeScreenView.dart';
@@ -9,7 +10,7 @@ import 'package:hive_flutter/adapters.dart';
 
 void main() async {
   await Hive.initFlutter();
-
+  Hive.registerAdapter(ResumeModelAdapter());
   runApp(const MyApp());
 }
 
