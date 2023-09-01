@@ -4,8 +4,12 @@ import 'package:cv_app/features/homeSreen/presentation/view/homeScreenView.dart'
 import 'package:cv_app/features/loadingScreen/presentation/view/loadinScreenView.dart';
 import 'package:cv_app/features/welcomeScreem/presentation/view/welcomeScreenView.dart';
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
 
-void main() {
+
+void main() async {
+  await Hive.initFlutter();
+
   runApp(const MyApp());
 }
 
