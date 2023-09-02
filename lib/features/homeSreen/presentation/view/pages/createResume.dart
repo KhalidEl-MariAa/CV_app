@@ -1,3 +1,4 @@
+import 'package:cv_app/core/utils/constants/const.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/addCourses.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/addImage.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/addSkills.dart';
@@ -17,8 +18,10 @@ class CreateResumeView extends StatefulWidget {
 class _CreateResumeViewState extends State<CreateResumeView> {
  final  GlobalKey<FormState> _globalKey =GlobalKey();
  bool z =  false;
+ 
   @override
   Widget build(BuildContext context) {
+    
     return  Form(
       key: _globalKey,
       child: Container(
@@ -30,7 +33,7 @@ class _CreateResumeViewState extends State<CreateResumeView> {
                  child: Column(
                  
                    children: [
-                          const PersonalDetailsView(),
+                         PersonalDetailsView(),
                      const SizedBox(height: 20,),
                      Divider(color: Colors.black.withOpacity(0.5),thickness: 0.7,),
                     const SizedBox(height: 20,),
@@ -49,7 +52,12 @@ class _CreateResumeViewState extends State<CreateResumeView> {
                          const ChooseLanguagesView(),
                      Divider(color: Colors.black.withOpacity(0.5),thickness: 0.7,),
                      const SizedBox(height: 20,),
-                          const AddImageView()
+                          const AddImageView(),
+                          ElevatedButton(
+                            onPressed: (){
+                              print(data.email);
+                            },
+                             child: Text('generate',style: bodyfont,))
 
                      
                      
