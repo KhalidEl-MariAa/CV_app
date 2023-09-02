@@ -11,6 +11,8 @@ class AddCourses extends StatefulWidget {
   State<AddCourses> createState() => _AddCoursesState();
 }
 int coursesNum=1;
+final collegCont = TextEditingController();
+final universityCont = TextEditingController();
 class _AddCoursesState extends State<AddCourses> {
   @override
   Widget build(BuildContext context) {
@@ -33,6 +35,7 @@ class _AddCoursesState extends State<AddCourses> {
                  Padding(
                     padding: const EdgeInsets.only(top:27,left: 13,right: 13),
                     child: CustomTextField(
+                      controller: collegCont,
                       validateString: "Can't be empty",
                        hintText: 'College', 
                        hintstyle: bodyfont,
@@ -42,6 +45,7 @@ class _AddCoursesState extends State<AddCourses> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 13,vertical: 17),
                     child: CustomTextField(
+                      controller: universityCont,
                       validateString: "Can't be empty",
                        hintText: 'University', 
                        hintstyle: bodyfont,

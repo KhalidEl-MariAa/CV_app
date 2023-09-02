@@ -12,6 +12,7 @@ class ContactUsDetailsView extends StatefulWidget {
 }
 final GlobalKey<FormState> _key =GlobalKey();
 late String body;
+final contactUsCont = TextEditingController();
 class _ContactUsDetailsViewState extends State<ContactUsDetailsView> {
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,7 @@ class _ContactUsDetailsViewState extends State<ContactUsDetailsView> {
                         style: titlefont.copyWith(fontSize: MediaQuery.of(context).size.width*0.05,fontWeight: FontWeight.bold),),
                       ),
                     CustomTextField(
-                      controller:TextEditingController(),
+                      controller: contactUsCont,
                       validateString: "Can;t send Nothing", 
                       hintText: 'Try to be clear',
                        hintstyle: bodyfont,

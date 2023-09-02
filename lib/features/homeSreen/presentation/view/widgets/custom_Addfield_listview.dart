@@ -24,7 +24,6 @@ class _AddFieldListviewState extends State<AddFieldListview> {
                              physics: const NeverScrollableScrollPhysics(),
                              itemCount:widget.num,
                              itemBuilder: (context, index) => CustomTextField(
-                              controller: widget.addFieldListviewontroller,
                               validateString:"Can't be empty" ,
                                hintText: widget.textFieldHint, 
                                hintstyle: bodyfont,

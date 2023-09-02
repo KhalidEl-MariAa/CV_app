@@ -3,8 +3,18 @@ import 'package:flutter/material.dart';
 
 import '../../../../../../core/utils/constants/const.dart';
 
+// ignore: must_be_immutable
 class PersonalDetailsView extends StatelessWidget {
-  const PersonalDetailsView({super.key});
+   PersonalDetailsView({super.key,});
+  
+final headlineCont = TextEditingController();
+final fullnameCont = TextEditingController();
+final phoneCont = TextEditingController();
+final emailCont = TextEditingController();
+final addressCont = TextEditingController();
+final cityCont = TextEditingController();
+final learningDegreeCont = TextEditingController();
+final summaryCont = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +36,10 @@ class PersonalDetailsView extends StatelessWidget {
       Padding(
                     padding: const EdgeInsets.only(top:27,left: 13,right: 13),
                     child: CustomTextField(
+                      controller: headlineCont,
+                      onchange: (x){
+                        data.headline=x;
+                      },
                       validateString: "Can't be empty",
                        hintText: 'Headline ( Your job(s) name(s) )', 
                        hintstyle: bodyfont,
@@ -36,6 +50,10 @@ class PersonalDetailsView extends StatelessWidget {
       Padding(
                     padding: const EdgeInsets.symmetric(vertical: 27,horizontal: 13),
                     child: CustomTextField(
+                      controller: fullnameCont,
+                      onchange: (p0) {
+                        data.fullname=p0;
+                      },
                       validateString: "Can't be empty",
                        hintText: 'Full Name',
                         hintstyle: bodyfont,
@@ -45,6 +63,10 @@ class PersonalDetailsView extends StatelessWidget {
       Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 13),
                     child: CustomTextField(
+                      controller: phoneCont,
+                      onchange: (p0) {
+                        data.phoneNumber=p0;
+                      },
                       validateString: "Can't be empty",
                        hintText: 'Phone Number', 
                        hintstyle: bodyfont,
@@ -55,6 +77,10 @@ class PersonalDetailsView extends StatelessWidget {
       Padding(
                     padding: const EdgeInsets.symmetric(vertical: 27,horizontal: 13),
                     child: CustomTextField(
+                      controller: emailCont,
+                      onchange: (p0) {
+                        data.email=p0;
+                        },
                       validateString: "Can't be empty",
                        hintText: 'Email',
                         hintstyle: bodyfont,
@@ -64,6 +90,10 @@ class PersonalDetailsView extends StatelessWidget {
       Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 13),
                     child: CustomTextField(
+                      controller: addressCont,
+                      onchange: (p0) {
+                        data.address=p0;
+                      },
                       validateString: "Can't be empty",
                        hintText: 'Address',
                        hintstyle: bodyfont,
@@ -73,6 +103,10 @@ class PersonalDetailsView extends StatelessWidget {
       Padding(
                     padding: const EdgeInsets.symmetric(vertical: 27,horizontal: 13),
                     child: CustomTextField(
+                      controller: cityCont,
+                      onchange: (p0) {
+                        data.city=p0;
+                      },
                       validateString:"Can't be empty",
                        hintText: 'City', 
                        hintstyle: bodyfont,
@@ -82,6 +116,10 @@ class PersonalDetailsView extends StatelessWidget {
       Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 13),
                     child: CustomTextField(
+                      controller: learningDegreeCont,
+                      onchange: (p0) {
+                        data.learningDegree=p0;
+                      },
                       validateString: "Can't be empty",
                       hintText: 'Learning degree (Fresh graduate - Graduate since 2021)',
                        hintstyle: bodyfont,
@@ -90,6 +128,10 @@ class PersonalDetailsView extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(top:27,left: 13,right: 13),
                     child: CustomTextField(
+                      controller: summaryCont,
+                      onchange: (p0) {
+                        data.summary=p0;
+                      },
                       validateString: "Can't be empty",
                        hintText: 'Summary about yourself', 
                        hintstyle: bodyfont,
