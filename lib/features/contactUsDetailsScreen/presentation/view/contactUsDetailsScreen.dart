@@ -35,6 +35,7 @@ class _ContactUsDetailsViewState extends State<ContactUsDetailsView> {
                         style: titlefont.copyWith(fontSize: MediaQuery.of(context).size.width*0.05,fontWeight: FontWeight.bold),),
                       ),
                     CustomTextField(
+                      controller:TextEditingController(),
                       validateString: "Can;t send Nothing", 
                       hintText: 'Try to be clear',
                        hintstyle: bodyfont,

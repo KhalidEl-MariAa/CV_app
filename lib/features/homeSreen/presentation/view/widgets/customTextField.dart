@@ -5,7 +5,7 @@ import '../../../../../core/utils/constants/const.dart';
 // ignore: must_be_immutable
 class CustomTextField extends StatelessWidget {
    CustomTextField({
-    super.key,required this.validateString,required this.hintText,required this.hintstyle,this.labelText,this.prefixIcon,this.suffixIcon,this.inputType,this.onchange,});
+    super.key,required this.validateString,required this.hintText,required this.hintstyle,this.labelText,this.prefixIcon,this.suffixIcon,this.inputType,this.onchange,this.controller});
   String validateString;
   String hintText;
   TextStyle hintstyle;
@@ -14,6 +14,7 @@ class CustomTextField extends StatelessWidget {
   TextInputType? inputType;
   void Function(String)? onchange;
   String? labelText;
+  TextEditingController? controller=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return TextFormField(

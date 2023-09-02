@@ -9,6 +9,7 @@ class AddFieldListview extends StatefulWidget {
  int num;
  String textFieldHint;
  Icon suffixIcon;
+ TextEditingController addFieldListviewontroller= TextEditingController();
   @override
   State<AddFieldListview> createState() => _AddFieldListviewState();
 }
@@ -23,6 +24,7 @@ class _AddFieldListviewState extends State<AddFieldListview> {
                              physics: const NeverScrollableScrollPhysics(),
                              itemCount:widget.num,
                              itemBuilder: (context, index) => CustomTextField(
+                              controller: widget.addFieldListviewontroller,
                               validateString:"Can't be empty" ,
                                hintText: widget.textFieldHint, 
                                hintstyle: bodyfont,
@@ -32,6 +34,8 @@ class _AddFieldListviewState extends State<AddFieldListview> {
                                 onTap: (){
                                  setState(() {
                                   widget.num++;
+                                  widget.addFieldListviewontroller.clear();
+                                  widget.addFieldListviewontroller.addListener(() { });
                                    
                                  });
                                  
