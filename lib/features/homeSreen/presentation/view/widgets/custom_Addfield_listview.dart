@@ -5,11 +5,18 @@ import '../../../../../core/utils/constants/const.dart';
 
 // ignore: must_be_immutable
 class AddFieldListview extends StatefulWidget {
-   AddFieldListview({super.key,required this.num,required this.textFieldHint,required this.suffixIcon});
+   AddFieldListview({super.key,
+   required this.num,
+   required this.textFieldHint,
+   required this.suffixIcon,
+   this.onchange,
+   this.onFieldSubmitted});
  int num;
  String textFieldHint;
  Icon suffixIcon;
  TextEditingController addFieldListviewontroller= TextEditingController();
+ void Function(String)? onchange;
+ void Function(String)? onFieldSubmitted;
   @override
   State<AddFieldListview> createState() => _AddFieldListviewState();
 }
@@ -24,6 +31,8 @@ class _AddFieldListviewState extends State<AddFieldListview> {
                              physics: const NeverScrollableScrollPhysics(),
                              itemCount:widget.num,
                              itemBuilder: (context, index) => CustomTextField(
+                              onFieldSubmitted: widget.onFieldSubmitted,
+                              onchange: widget.onchange,
                               validateString:"Can't be empty" ,
                                hintText: widget.textFieldHint, 
                                hintstyle: bodyfont,

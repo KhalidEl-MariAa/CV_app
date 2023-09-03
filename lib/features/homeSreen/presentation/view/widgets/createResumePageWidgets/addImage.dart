@@ -33,9 +33,11 @@ class _AddImageViewState extends State<AddImageView> {
                           backgroundColor: Colors.black
                         ),
                         onPressed: ()async {
-                           try{pickedimag= await imagepicker.pickImage(source: ImageSource.camera);
+                           try{
+                            pickedimag= await imagepicker.pickImage(source: ImageSource.camera);
                           if (pickedimag!=null) {
                             imagefile=File(pickedimag.path);
+                            data.imageFile=imagefile;
                             setState(() {
                               
                             });
@@ -60,6 +62,7 @@ class _AddImageViewState extends State<AddImageView> {
                           pickedimag= await imagepicker.pickImage(source: ImageSource.gallery);
                           if (pickedimag!=null) {
                             imagefile=File(pickedimag.path);
+                            data.imageFile=imagefile;
                             
                             setState(() {
                               

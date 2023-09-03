@@ -38,7 +38,7 @@ class ChooseLanguagesView extends StatelessWidget {
                         ),
                         items: PagesNames.languages,
                          onConfirm: (p0) {
-                          
+                          data.languages=p0;
                         },),
                      )],
     );

@@ -11,6 +11,7 @@ class AddSkillsView extends StatefulWidget {
   State<AddSkillsView> createState() => _AddSkillsViewState();
 }
 int skillNum = 1;
+var skills = [];
 
 class _AddSkillsViewState extends State<AddSkillsView> {
   @override
@@ -32,7 +33,16 @@ class _AddSkillsViewState extends State<AddSkillsView> {
                   ),
                                  const SizedBox(height: 20,),
                     AnimatedCrossFade(
-                      firstChild:  AddFieldListview(num: skillNum, textFieldHint: 'Skills', suffixIcon: const Icon(Icons.add,size: 30,)),
+
+                      firstChild:  AddFieldListview(
+                        onFieldSubmitted: (p0) {
+                          skills.add(p0);
+                          data.skills=skills;
+                        },
+                        num: skillNum,
+                         textFieldHint: 'Skills',
+                          suffixIcon: const Icon(Icons.add,size: 30,)
+                          ),
                      secondChild: const SizedBox(),
                       crossFadeState: CrossFadeState.showFirst,
                       duration:const Duration(milliseconds: 700))

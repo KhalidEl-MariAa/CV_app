@@ -12,6 +12,7 @@ class AddProjectView extends StatefulWidget {
 }
 int projnum=1;
 bool z=false;
+var projects = [];
 class _AddProjectViewState extends State<AddProjectView> {
   @override
   Widget build(BuildContext context) {
@@ -46,7 +47,15 @@ class _AddProjectViewState extends State<AddProjectView> {
       
        AnimatedCrossFade(
         firstChild: Text('No problem you still have time to start!',style: bodyfont,),
-        secondChild: AddFieldListview(num: projnum, textFieldHint: 'ex: Project Name - Github link :\n      Github link is optional for you ', suffixIcon: const Icon(Icons.add,size: 30,)),
+        secondChild: AddFieldListview(
+          onFieldSubmitted: (p0) {
+            
+            projects.add(p0);
+            data.projects=projects;
+          },
+          num: projnum,
+           textFieldHint: 'ex: Project Name - Github link :\n      Github link is optional for you ',
+            suffixIcon: const Icon(Icons.add,size: 30,)),
         duration: const Duration(milliseconds: 700),
          crossFadeState: z? CrossFadeState.showSecond:CrossFadeState.showFirst
        )

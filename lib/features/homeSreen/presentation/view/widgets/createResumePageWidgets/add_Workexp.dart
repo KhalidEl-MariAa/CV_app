@@ -14,6 +14,7 @@ class AddWorkExperienceView extends StatefulWidget {
 class _AddWorkExperienceViewState extends State<AddWorkExperienceView> {
   bool z= false;
   int workNum=1;
+  var skills = [];
   
 
   @override
@@ -49,7 +50,15 @@ class _AddWorkExperienceViewState extends State<AddWorkExperienceView> {
       
        AnimatedCrossFade(
         firstChild: Text('No problem the best is coming for you',style: bodyfont,),
-        secondChild: AddFieldListview(num: workNum, textFieldHint: 'ex: Position in "Company name "', suffixIcon: const Icon(Icons.add,size: 30,)),
+        secondChild: AddFieldListview(
+          onFieldSubmitted: (p0) {
+            
+            skills.add(p0);
+            data.skills=skills;
+          },
+          num: workNum,
+           textFieldHint: 'ex: Position in "Company name "',
+            suffixIcon: const Icon(Icons.add,size: 30,)),
         duration: const Duration(milliseconds: 700),
          crossFadeState: z? CrossFadeState.showSecond:CrossFadeState.showFirst
        )
