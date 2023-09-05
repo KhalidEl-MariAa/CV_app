@@ -9,6 +9,7 @@ class AddFieldListview extends StatefulWidget {
    required this.num,
    required this.textFieldHint,
    required this.suffixIcon,
+   required this.datalist,
    this.onchange,
    this.onFieldSubmitted});
  int num;
@@ -17,6 +18,7 @@ class AddFieldListview extends StatefulWidget {
  TextEditingController addFieldListviewontroller= TextEditingController();
  void Function(String)? onchange;
  void Function(String)? onFieldSubmitted;
+ List datalist;
   @override
   State<AddFieldListview> createState() => _AddFieldListviewState();
 }
@@ -60,6 +62,22 @@ class _AddFieldListviewState extends State<AddFieldListview> {
                                  setState(() {
                                   widget.num--;
                                  });
+                                 try {
+                                   widget.datalist.removeLast();
+                                 } catch (e) {
+                                   showDialog(
+                                    context: context,
+                                     builder:(context) {
+                                   return AlertDialog(
+                                      content: Text('This List is already empty...',style: titlefont,),
+                                      actions: [
+                                        TextButton(onPressed: (){Navigator.pop(context);},
+                                         child: Text('Ok',style: bodyfont,))
+                                      ],
+                                     );
+                                     }
+                                   );
+                                 }
                                 },),
 
                                  GestureDetector(

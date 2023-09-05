@@ -35,6 +35,7 @@ class _AddSkillsViewState extends State<AddSkillsView> {
                     AnimatedCrossFade(
 
                       firstChild:  AddFieldListview(
+                        datalist: skills,
                         onFieldSubmitted: (p0) {
                           skills.add(p0);
                           data.skills=skills;

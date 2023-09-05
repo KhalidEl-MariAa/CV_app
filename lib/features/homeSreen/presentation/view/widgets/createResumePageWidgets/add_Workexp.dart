@@ -51,6 +51,7 @@ class _AddWorkExperienceViewState extends State<AddWorkExperienceView> {
        AnimatedCrossFade(
         firstChild: Text('No problem the best is coming for you',style: bodyfont,),
         secondChild: AddFieldListview(
+          datalist: skills,
           onFieldSubmitted: (p0) {
             
             skills.add(p0);

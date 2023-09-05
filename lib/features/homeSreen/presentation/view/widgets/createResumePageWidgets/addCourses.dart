@@ -63,6 +63,7 @@ class _AddCoursesState extends State<AddCourses> {
 
                       AnimatedCrossFade(
      firstChild:AddFieldListview(
+      datalist: courses,
       onFieldSubmitted: (p0) {
             
             courses.add(p0);

@@ -48,6 +48,7 @@ class _AddProjectViewState extends State<AddProjectView> {
        AnimatedCrossFade(
         firstChild: Text('No problem you still have time to start!',style: bodyfont,),
         secondChild: AddFieldListview(
+          datalist: projects,
           onFieldSubmitted: (p0) {
             
             projects.add(p0);
