@@ -8,6 +8,7 @@ static const welcomeScreenName= '/';
 static const loadingScreenName='LoadingScreen';
 static const homeScreenName='HomeScreen';
 static const contactUsDetails='ContactUsDetailsScreen';
+static const pdfScreen='pdfScreen';
 static List<MultiSelectItem<dynamic>> languages= [
                       MultiSelectItem('Arabic','Arabic'),
                       MultiSelectItem('English A1','English A1'),

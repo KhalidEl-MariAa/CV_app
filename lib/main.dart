@@ -4,6 +4,7 @@ import 'package:cv_app/features/contactUsDetailsScreen/presentation/view/contact
 import 'package:cv_app/features/homeSreen/data/models/resume_Model.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/homeScreenView.dart';
 import 'package:cv_app/features/loadingScreen/presentation/view/loadinScreenView.dart';
+import 'package:cv_app/features/pdfScreen/pdf_Screen.dart';
 import 'package:cv_app/features/welcomeScreem/presentation/view/welcomeScreenView.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
@@ -29,7 +30,8 @@ class MyApp extends StatelessWidget {
         PagesNames.welcomeScreenName:(context) => const WelcomeScreen(),
         PagesNames.loadingScreenName:(context) => const LoadingScreenView(),
         PagesNames.homeScreenName:(context) => const HomeScreenView(),
-        PagesNames.contactUsDetails:(context) => const ContactUsDetailsView()
+        PagesNames.contactUsDetails:(context) => const ContactUsDetailsView(),
+        PagesNames.pdfScreen:(context) => const PdfView()
       },
       initialRoute: PagesNames.welcomeScreenName,
     );
