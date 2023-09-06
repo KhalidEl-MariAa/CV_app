@@ -55,7 +55,7 @@ class _CreateResumeViewState extends State<CreateResumeView> {
                           const AddImageView(),
                           ElevatedButton(
                             onPressed: (){
-                              print(data.imageFile == null);
+                              print(data.skills );
                             },
                              child: Text('generate',style: bodyfont,))
 
