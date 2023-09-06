@@ -39,17 +39,35 @@ class _AddFieldListviewState extends State<AddFieldListview> {
                                hintText: widget.textFieldHint, 
                                hintstyle: bodyfont,
                                suffixIcon:widget.num==1? 
-                                GestureDetector(
-                                child:  widget.suffixIcon,
-                                onTap: (){
-                                 setState(() {
-                                  widget.num++;
-                                  widget.addFieldListviewontroller.clear();
-                                  widget.addFieldListviewontroller.addListener(() { });
-                                   
-                                 });
-                                 
-                                },
+                                Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    GestureDetector(
+                                      onTap:  () {
+                                         try {
+                                   widget.datalist.removeLast();
+                                 } catch (e) {
+                                   showDialog(
+                                    context: context,
+                                     builder:buildAlertDialog
+                                   );
+                                 }
+                                      },
+                                      child: const Icon(Icons.delete,size: 30,),
+                                    ),
+                                    GestureDetector(
+                                    child:  widget.suffixIcon,
+                                    onTap: (){
+                                     setState(() {
+                                      widget.num++;
+                                      widget.addFieldListviewontroller.clear();
+                                      widget.addFieldListviewontroller.addListener(() { });
+                                       
+                                     });
+                                     
+                                    },
+                                    ),
+                                  ],
                                 )
                                 :
                                  Row(
@@ -67,15 +85,7 @@ class _AddFieldListviewState extends State<AddFieldListview> {
                                  } catch (e) {
                                    showDialog(
                                     context: context,
-                                     builder:(context) {
-                                   return AlertDialog(
-                                      content: Text('This List is already empty...',style: titlefont,),
-                                      actions: [
-                                        TextButton(onPressed: (){Navigator.pop(context);},
-                                         child: Text('Ok',style: bodyfont,))
-                                      ],
-                                     );
-                                     }
+                                     builder:buildAlertDialog
                                    );
                                  }
                                 },),
@@ -91,4 +101,16 @@ class _AddFieldListviewState extends State<AddFieldListview> {
     )
     );
   }
+
+  Widget buildAlertDialog(context) {
+  return AlertDialog(
+    backgroundColor: Colors.purple[100],
+    title: Center(child: Text('Notice !',style: titlefont,),),
+     content: Text('This List is already empty...',style: titlefont,),
+     actions: [
+       TextButton(onPressed: (){Navigator.pop(context);},
+        child: Text('Ok',style: bodyfont,))
+     ],
+    );
+    }
 }
