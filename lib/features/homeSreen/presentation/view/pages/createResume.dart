@@ -1,4 +1,5 @@
 import 'package:cv_app/core/utils/constants/const.dart';
+import 'package:cv_app/core/utils/pagesName.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/addCourses.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/addImage.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/addSkills.dart';
@@ -6,7 +7,9 @@ import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResume
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/add_project.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/chooseLanguage.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/personalDetails.dart';
+import 'package:cv_app/features/homeSreen/presentation/view_model/cubit/add_resume_data_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CreateResumeView extends StatefulWidget {
   const CreateResumeView({super.key});
@@ -16,61 +19,122 @@ class CreateResumeView extends StatefulWidget {
 }
 
 class _CreateResumeViewState extends State<CreateResumeView> {
- final  GlobalKey<FormState> _globalKey =GlobalKey();
- bool z =  false;
- 
+  final GlobalKey<FormState> _globalKey = GlobalKey();
+  bool z = false;
+
   @override
   Widget build(BuildContext context) {
-    
-    return  Form(
+    return Form(
       key: _globalKey,
-      child: Container(
-        color: Colors.white,
-        child: CustomScrollView(
-           
-               slivers:[
-                SliverToBoxAdapter(
-                 child: Column(
-                 
-                   children: [
-                      const  PersonalDetailsView(),
-                     const SizedBox(height: 20,),
-                     Divider(color: Colors.black.withOpacity(0.5),thickness: 0.7,),
-                    const SizedBox(height: 20,),
-                         const AddCourses(),
-                      Divider(color: Colors.black.withOpacity(0.5),thickness: 0.7,),
-                     const SizedBox(height: 20,),
-                         const AddSkillsView(),
-                     Divider(color: Colors.black.withOpacity(0.5),thickness: 0.7,),
-                     const SizedBox(height: 20,),
-                           const AddWorkExperienceView(),
-                     Divider(color: Colors.black.withOpacity(0.5),thickness: 0.7,),
-                     const SizedBox(height: 20,),
-                          const AddProjectView(),
-                      Divider(color: Colors.black.withOpacity(0.5),thickness: 0.7,),
-                     const SizedBox(height: 20,),
-                         const ChooseLanguagesView(),
-                     Divider(color: Colors.black.withOpacity(0.5),thickness: 0.7,),
-                     const SizedBox(height: 20,),
-                          const AddImageView(),
-                          ElevatedButton(
-                            onPressed: (){
-                            if (_globalKey.currentState!.validate()){
-                              print('headline : ${data.headline},\n full name :${data.fullname}\n,email: ${data.email}\n phone: ,${data.phoneNumber}\n,address: ${data.address},\n city: ${data.city},\n ld: ${data.learningDegree},\n summ: ${data.summary},\n cooleg: ${data.college},\n uni: ${data.university},\n cou: ${data.courses},\n skills: ${data.skills},\n work: ${data.workexp},\n pro: ${data.projects},\n :${data.languages},${data.imageFile},');
-                            }
-                            },
-                             child: Text('generate',style: bodyfont,))
-
-                     
-                     
-                     
-                            ],
-                 ),
-               ),
-              ]
-        ),
+      child: BlocListener<AddResumeDataCubit, AddResumeDataState>(
+        listener: (context, state)  {
+          if(state is AddResumeDataSuccess){
+            Navigator.pushNamed(context, PagesNames.pdfScreen);
+          }
+          
+        },
+        child: Container(
+            color: Colors.white,
+            child: CustomScrollView(slivers: [
+              SliverToBoxAdapter(
+                child: Column(
+                  children: [
+                    const PersonalDetailsView(),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Divider(
+                      color: Colors.black.withOpacity(0.5),
+                      thickness: 0.7,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    const AddCourses(),
+                    Divider(
+                      color: Colors.black.withOpacity(0.5),
+                      thickness: 0.7,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    const AddSkillsView(),
+                    Divider(
+                      color: Colors.black.withOpacity(0.5),
+                      thickness: 0.7,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    const AddWorkExperienceView(),
+                    Divider(
+                      color: Colors.black.withOpacity(0.5),
+                      thickness: 0.7,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    const AddProjectView(),
+                    Divider(
+                      color: Colors.black.withOpacity(0.5),
+                      thickness: 0.7,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    const ChooseLanguagesView(),
+                    Divider(
+                      color: Colors.black.withOpacity(0.5),
+                      thickness: 0.7,
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    const AddImageView(),
+                    ElevatedButton(
+                        onPressed: () async {
+                          if (_globalKey.currentState!.validate()){
+                            
+                            await BlocProvider.of<AddResumeDataCubit>(context)
+                                .addDataToHive(data);
+                           
+                          }
+                        },
+                        child: Text(
+                          'generate',
+                          style: bodyfont,
+                        ))
+                  ],
+                ),
+              ),
+            ])),
       ),
     );
-    
+  }
+
+  Widget buildAlertDialog(context, String title, String content) {
+    return AlertDialog(
+      backgroundColor: Colors.purple[100],
+      title: Center(
+        child: Text(
+          title,
+          style: titlefont,
+        ),
+      ),
+      content: Text(
+        content,
+        style: titlefont,
+      ),
+      actions: [
+        TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Text(
+              'Ok',
+              style: bodyfont,
+            ))
+      ],
+    );
   }
 }
