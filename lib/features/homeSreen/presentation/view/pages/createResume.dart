@@ -55,7 +55,9 @@ class _CreateResumeViewState extends State<CreateResumeView> {
                           const AddImageView(),
                           ElevatedButton(
                             onPressed: (){
-                              print(data.skills );
+                            if (_globalKey.currentState!.validate()){
+                              print('headline : ${data.headline},\n full name :${data.fullname}\n,email: ${data.email}\n phone: ,${data.phoneNumber}\n,address: ${data.address},\n city: ${data.city},\n ld: ${data.learningDegree},\n summ: ${data.summary},\n cooleg: ${data.college},\n uni: ${data.university},\n cou: ${data.courses},\n skills: ${data.skills},\n work: ${data.workexp},\n pro: ${data.projects},\n :${data.languages},${data.imageFile},');
+                            }
                             },
                              child: Text('generate',style: bodyfont,))
 
