@@ -33,7 +33,7 @@ class _CreateResumeViewState extends State<CreateResumeView> {
                  child: Column(
                  
                    children: [
-                         PersonalDetailsView(),
+                      const  PersonalDetailsView(),
                      const SizedBox(height: 20,),
                      Divider(color: Colors.black.withOpacity(0.5),thickness: 0.7,),
                     const SizedBox(height: 20,),

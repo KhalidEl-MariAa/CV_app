@@ -4,16 +4,28 @@ import 'package:flutter/material.dart';
 import '../../../../../../core/utils/constants/const.dart';
 
 // ignore: must_be_immutable
-class PersonalDetailsView extends StatelessWidget {
-   PersonalDetailsView({super.key,});
-  
+class PersonalDetailsView extends StatefulWidget {
+   const PersonalDetailsView({super.key,});
+
+  @override
+  State<PersonalDetailsView> createState() => _PersonalDetailsViewState();
+}
+
+class _PersonalDetailsViewState extends State<PersonalDetailsView> {
 final headlineCont = TextEditingController();
+
 final fullnameCont = TextEditingController();
+
 final phoneCont = TextEditingController();
+
 final emailCont = TextEditingController();
+
 final addressCont = TextEditingController();
+
 final cityCont = TextEditingController();
+
 final learningDegreeCont = TextEditingController();
+
 final summaryCont = TextEditingController();
 
   @override
