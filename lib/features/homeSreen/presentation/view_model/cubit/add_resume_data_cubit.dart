@@ -8,15 +8,28 @@ part 'add_resume_data_state.dart';
 class AddResumeDataCubit extends Cubit<AddResumeDataState> {
   AddResumeDataCubit() : super(AddResumeDataInitial());
 
-  void addDataToHive (ResumeModel resumeObject ){
+  Future<void> addDataToHive (ResumeModel resumeObject )async {
 
     emit(AddResumeDataLoading());
+    var box = Hive.box<ResumeModel>(kBoxName);
     try {
-      var box = Hive.box(kBoxName);
-      box.add(resumeObject);
+      
+      await box.add(resumeObject);
       emit(AddResumeDataSuccess());
-    } catch (e) {
-      emit(AddResumeDataFailure(errormessage: e.toString()));
+    }  
+
+    catch (e) {
+      if(e is HiveError){
+
+    await box.clear();
+    emit(AddResumeDataFailure());
     }
+    else{
+     emit(AddResumeDataFailure());
+    }
+
+    } 
   }
+
+ 
 }
