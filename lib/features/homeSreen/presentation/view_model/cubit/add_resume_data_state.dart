@@ -9,7 +9,4 @@ class AddResumeDataLoading extends AddResumeDataState{}
 
 class AddResumeDataSuccess extends AddResumeDataState{}
 
-class AddResumeDataFailure extends AddResumeDataState{
-  String errormessage ; 
-  AddResumeDataFailure({required this.errormessage});
-}
+class AddResumeDataFailure extends AddResumeDataState{}
