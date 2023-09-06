@@ -11,7 +11,8 @@ class AddFieldListview extends StatefulWidget {
    required this.suffixIcon,
    required this.datalist,
    this.onchange,
-   this.onFieldSubmitted});
+   this.onFieldSubmitted,
+   this.validate});
  int num;
  String textFieldHint;
  Icon suffixIcon;
@@ -19,6 +20,7 @@ class AddFieldListview extends StatefulWidget {
  void Function(String)? onchange;
  void Function(String)? onFieldSubmitted;
  List datalist;
+ bool? validate= true;
   @override
   State<AddFieldListview> createState() => _AddFieldListviewState();
 }
@@ -33,6 +35,7 @@ class _AddFieldListviewState extends State<AddFieldListview> {
                              physics: const NeverScrollableScrollPhysics(),
                              itemCount:widget.num,
                              itemBuilder: (context, index) => CustomTextField(
+                              validate:widget.validate ,
                               onFieldSubmitted: widget.onFieldSubmitted,
                               onchange: widget.onchange,
                               validateString:"Can't be empty" ,

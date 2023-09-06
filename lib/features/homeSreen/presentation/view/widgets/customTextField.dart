@@ -15,7 +15,8 @@ class CustomTextField extends StatelessWidget {
     this.inputType,
     this.onchange,
      this.controller,
-     this.onFieldSubmitted});
+     this.onFieldSubmitted,
+     this.validate});
 
   String validateString;
   String hintText;
@@ -27,6 +28,7 @@ class CustomTextField extends StatelessWidget {
   var controller;
   String? labelText;
   void Function(String)? onFieldSubmitted;
+  bool? validate = true;
   
   @override
   Widget build(BuildContext context) {
@@ -36,11 +38,14 @@ class CustomTextField extends StatelessWidget {
                        onChanged: onchange,
                       keyboardType:inputType ,
                       validator: (value) {
+                      if(validate==true){
                         if(value!.isEmpty){
                           return validateString;
                         }
                         return null;
-                      },
+                      }
+                      return null; 
+                       },
                       style:bodyfont ,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(borderRadius: BorderRadius.circular(35)),
