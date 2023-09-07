@@ -10,8 +10,6 @@ class PersonalDetailsView extends StatefulWidget {
   @override
   State<PersonalDetailsView> createState() => _PersonalDetailsViewState();
 }
-
-class _PersonalDetailsViewState extends State<PersonalDetailsView> {
 final headlineCont = TextEditingController();
 
 final fullnameCont = TextEditingController();
@@ -27,6 +25,8 @@ final cityCont = TextEditingController();
 final learningDegreeCont = TextEditingController();
 
 final summaryCont = TextEditingController();
+class _PersonalDetailsViewState extends State<PersonalDetailsView> {
+
 
   @override
   Widget build(BuildContext context) {
