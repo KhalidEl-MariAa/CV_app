@@ -1,4 +1,5 @@
 
+import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/alert_Dialog.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/custom_Addfield_listview.dart';
 import 'package:flutter/material.dart';
 
@@ -37,8 +38,15 @@ class _AddSkillsViewState extends State<AddSkillsView> {
                       firstChild:  AddFieldListview(
                         datalist: skills,
                         onFieldSubmitted: (p0) {
-                          skills.add(p0);
-                          data.skills=skills;
+                          if(skills.contains(p0)){
+              showDialog(context: context,
+               builder:(context) =>  const CustomAlert(title: '',content: 'This item is already saved..',),);
+           }
+           else{
+            skills.add(p0);
+            data.skills=skills;
+           }
+
                         },
                         num: skillNum,
                          textFieldHint: 'Skills',
