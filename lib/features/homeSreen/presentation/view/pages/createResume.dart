@@ -112,29 +112,5 @@ class _CreateResumeViewState extends State<CreateResumeView> {
     );
   }
 
-  Widget buildAlertDialog(context, String title, String content) {
-    return AlertDialog(
-      backgroundColor: Colors.purple[100],
-      title: Center(
-        child: Text(
-          title,
-          style: titlefont,
-        ),
-      ),
-      content: Text(
-        content,
-        style: titlefont,
-      ),
-      actions: [
-        TextButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: Text(
-              'Ok',
-              style: bodyfont,
-            ))
-      ],
-    );
-  }
+  
 }
