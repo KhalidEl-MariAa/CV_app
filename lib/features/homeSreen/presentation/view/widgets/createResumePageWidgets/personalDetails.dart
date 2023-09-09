@@ -48,6 +48,7 @@ class _PersonalDetailsViewState extends State<PersonalDetailsView> {
       Padding(
                     padding: const EdgeInsets.only(top:27,left: 13,right: 13),
                     child: CustomTextField(
+                      validate: true,
                       controller: headlineCont,
                       onchange: (x){
                         data.headline=x;
@@ -62,6 +63,7 @@ class _PersonalDetailsViewState extends State<PersonalDetailsView> {
       Padding(
                     padding: const EdgeInsets.symmetric(vertical: 27,horizontal: 13),
                     child: CustomTextField(
+                      validate: true,
                       controller: fullnameCont,
                       onchange: (p0) {
                         data.fullname=p0;
@@ -75,6 +77,7 @@ class _PersonalDetailsViewState extends State<PersonalDetailsView> {
       Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 13),
                     child: CustomTextField(
+                      validate: true,
                       controller: phoneCont,
                       onchange: (p0) {
                         data.phoneNumber=p0;
@@ -89,6 +92,7 @@ class _PersonalDetailsViewState extends State<PersonalDetailsView> {
       Padding(
                     padding: const EdgeInsets.symmetric(vertical: 27,horizontal: 13),
                     child: CustomTextField(
+                      validate: true,
                       controller: emailCont,
                       onchange: (p0) {
                         data.email=p0;
@@ -102,6 +106,7 @@ class _PersonalDetailsViewState extends State<PersonalDetailsView> {
       Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 13),
                     child: CustomTextField(
+                      validate: true,
                       controller: addressCont,
                       onchange: (p0) {
                         data.address=p0;
@@ -115,6 +120,7 @@ class _PersonalDetailsViewState extends State<PersonalDetailsView> {
       Padding(
                     padding: const EdgeInsets.symmetric(vertical: 27,horizontal: 13),
                     child: CustomTextField(
+                      validate: true,
                       controller: cityCont,
                       onchange: (p0) {
                         data.city=p0;
@@ -128,6 +134,7 @@ class _PersonalDetailsViewState extends State<PersonalDetailsView> {
       Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 13),
                     child: CustomTextField(
+                      validate: true,
                       controller: learningDegreeCont,
                       onchange: (p0) {
                         data.learningDegree=p0;
@@ -140,6 +147,7 @@ class _PersonalDetailsViewState extends State<PersonalDetailsView> {
                   Padding(
                     padding: const EdgeInsets.only(top:27,left: 13,right: 13),
                     child: CustomTextField(
+                      validate: true,
                       controller: summaryCont,
                       onchange: (p0) {
                         data.summary=p0;

@@ -36,6 +36,7 @@ class _AddSkillsViewState extends State<AddSkillsView> {
                     AnimatedCrossFade(
 
                       firstChild:  AddFieldListview(
+                        validate: true,
                         datalist: skills,
                         onFieldSubmitted: (p0) {
                           if(skills.contains(p0)){
@@ -49,7 +50,7 @@ class _AddSkillsViewState extends State<AddSkillsView> {
 
                         },
                         num: skillNum,
-                         textFieldHint: 'Skills',
+                         textFieldHint: 'Skills...press Done button of keyboard after finish typing',
                           suffixIcon: const Icon(Icons.add,size: 30,)
                           ),
                      secondChild: const SizedBox(),

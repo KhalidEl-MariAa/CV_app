@@ -41,9 +41,8 @@ class CustomTextField extends StatelessWidget {
                       if(validate==true){
                         if(value!.isEmpty){
                           return validateString;
-                        }
-                        return null;
-                      }
+                        }}
+                       
                       return null; 
                        },
                       style:bodyfont ,

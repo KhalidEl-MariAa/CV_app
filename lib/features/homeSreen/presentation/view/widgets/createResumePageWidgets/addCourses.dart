@@ -37,6 +37,7 @@ class _AddCoursesState extends State<AddCourses> {
                  Padding(
                     padding: const EdgeInsets.only(top:27,left: 13,right: 13),
                     child: CustomTextField(
+                      validate: true,
                     onchange: (p0) {
                       data.college= p0;
                     },
@@ -50,6 +51,7 @@ class _AddCoursesState extends State<AddCourses> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 13,vertical: 17),
                     child: CustomTextField(
+                      validate: true,
                       onchange: (p0) {
                         data.university=p0;
                       },
@@ -64,6 +66,7 @@ class _AddCoursesState extends State<AddCourses> {
 
                       AnimatedCrossFade(
      firstChild:AddFieldListview(
+      validate: true,
       datalist: courses,
       onFieldSubmitted: (p0) {
             if(courses.contains(p0)){
@@ -78,7 +81,7 @@ class _AddCoursesState extends State<AddCourses> {
 
           },
       num: coursesNum, 
-      textFieldHint: 'Courses',
+      textFieldHint: 'Courses..press done button of keyboard after typing',
        suffixIcon: const Icon(Icons.add,size: 30,)),
      secondChild: const SizedBox(),
      crossFadeState: CrossFadeState.showFirst,
