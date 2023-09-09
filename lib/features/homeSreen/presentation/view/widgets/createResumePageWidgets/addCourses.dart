@@ -1,3 +1,4 @@
+import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/alert_Dialog.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/custom_Addfield_listview.dart';
 import 'package:flutter/material.dart';
 
@@ -65,9 +66,16 @@ class _AddCoursesState extends State<AddCourses> {
      firstChild:AddFieldListview(
       datalist: courses,
       onFieldSubmitted: (p0) {
-            
+            if(courses.contains(p0)){
+             showDialog(
+              context: context,
+               builder:(context) =>  const CustomAlert(title: '',content: 'This item is already saved..',), );
+           }
+           else{
             courses.add(p0);
             data.courses=courses;
+           }
+
           },
       num: coursesNum, 
       textFieldHint: 'Courses',
@@ -80,4 +88,6 @@ class _AddCoursesState extends State<AddCourses> {
     );
     
   }
+
+  
 }
