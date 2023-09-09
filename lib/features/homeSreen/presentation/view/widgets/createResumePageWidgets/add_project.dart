@@ -1,3 +1,4 @@
+import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/alert_Dialog.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/custom_Addfield_listview.dart';
 import 'package:flutter/material.dart';
 import 'package:lite_rolling_switch/lite_rolling_switch.dart';
@@ -51,8 +52,14 @@ class _AddProjectViewState extends State<AddProjectView> {
           datalist: projects,
           onFieldSubmitted: (p0) {
             
+           if(projects.contains(p0)){
+              showDialog(context: context,
+               builder:(context) =>  const CustomAlert(title: '',content: 'This item is already saved..',),);
+           }
+           else{
             projects.add(p0);
             data.projects=projects;
+           }
           },
           num: projnum,
            textFieldHint: 'ex: Project Name - Github link :\n      Github link is optional for you ',
