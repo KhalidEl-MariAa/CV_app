@@ -1,3 +1,4 @@
+import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/alert_Dialog.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/customTextField.dart';
 import 'package:flutter/material.dart';
 
@@ -52,7 +53,7 @@ class _AddFieldListviewState extends State<AddFieldListview> {
                                  } catch (e) {
                                    showDialog(
                                     context: context,
-                                     builder:buildAlertDialog
+                                     builder:(context) => const CustomAlert(title: 'Notice !', content: 'This list is already empty'),
                                    );
                                  }
                                       },
@@ -88,7 +89,7 @@ class _AddFieldListviewState extends State<AddFieldListview> {
                                  } catch (e) {
                                    showDialog(
                                     context: context,
-                                     builder:buildAlertDialog
+                                     builder:(context) => const CustomAlert(title: 'Notice !', content: 'This list is already empty'),
                                    );
                                  }
                                 },),
@@ -105,15 +106,5 @@ class _AddFieldListviewState extends State<AddFieldListview> {
     );
   }
 
-  Widget buildAlertDialog(context) {
-  return AlertDialog(
-    backgroundColor: Colors.purple[100],
-    title: Center(child: Text('Notice !',style: titlefont,),),
-     content: Text('This List is already empty...',style: titlefont,),
-     actions: [
-       TextButton(onPressed: (){Navigator.pop(context);},
-        child: Text('Ok',style: bodyfont,))
-     ],
-    );
-    }
+ 
 }
