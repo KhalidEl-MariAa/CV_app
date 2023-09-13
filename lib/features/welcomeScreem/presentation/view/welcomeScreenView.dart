@@ -24,7 +24,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     PageViewModel(
       body: "Haven't a CV yet?",
       title: 'Welcome...',
-      image: const Image(image: AssetImage('lib/core/assets/images/hello.jpg')),
+      image: const Image(image: AssetImage('assets/images/hello.jpg')),
       decoration: PageDecoration(
         bodyPadding: const EdgeInsets.only(top: 17),
         titleTextStyle: titlefont.copyWith(fontSize: MediaQuery.of(context).size.width*0.08,letterSpacing: 3,fontStyle: FontStyle.italic,fontWeight: FontWeight.bold),
@@ -33,7 +33,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
      PageViewModel(
       body: 'No problem, with us you can create it easily and free...so you can apply to the job you want ,Only follow the flow',
       title: "Doesn't  have exprience to create your CV?",
-      image: const Image(image: AssetImage('lib/core/assets/images/cv.jpg')),
+      image: const Image(image: AssetImage('assets/images/cv.jpg')),
       decoration: PageDecoration(
         bodyPadding:const EdgeInsets.only(top: 25),
         titleTextStyle: titlefont.copyWith(fontSize: MediaQuery.of(context).size.width*0.07,letterSpacing: 3,fontStyle: FontStyle.italic,fontWeight: FontWeight.bold),

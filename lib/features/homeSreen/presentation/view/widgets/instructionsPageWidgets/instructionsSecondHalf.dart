@@ -31,7 +31,7 @@ class InstructionsViewSecondHalf extends StatelessWidget {
                     style:titlefont.copyWith(fontSize: MediaQuery.of(context).size.width*0.04,fontWeight: FontWeight.bold) ,
                     ),
                   ),
-                  Image.asset('lib/core/assets/images/interview.png',width:MediaQuery.of(context).size.width*0.7 ,),
+                  Image.asset('assets/images/interview.png',width:MediaQuery.of(context).size.width*0.7 ,),
                    Padding(
                     padding: const EdgeInsets.symmetric(horizontal:8.0,vertical: 15),
                     child: Text('To achieve interview please follow these instructions : ',

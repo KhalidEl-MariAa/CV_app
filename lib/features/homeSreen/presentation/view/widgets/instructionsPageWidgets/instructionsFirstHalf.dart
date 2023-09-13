@@ -26,7 +26,7 @@ class InstructionsViewFirstHalf extends StatelessWidget {
                   padding: const EdgeInsets.only(top:8.0),
                   child: Text('How Companies choose appliers for interviews?',style: titlefont.copyWith(fontWeight: FontWeight.bold),),
                 ),
-                  Image.asset('lib/core/assets/images/apply2.jpg',width:MediaQuery.of(context).size.width*0.7 ,),
+                  Image.asset('assets/images/apply2.jpg',width:MediaQuery.of(context).size.width*0.7 ,),
                 Padding(
                   padding: const EdgeInsets.only(left:8.0,right: 8.0,bottom: 20),
                   child: Text(
