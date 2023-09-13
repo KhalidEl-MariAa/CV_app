@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:cv_app/core/utils/constants/const.dart';
 import 'package:cv_app/core/utils/pagesName.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/addCourses.dart';
@@ -8,6 +10,7 @@ import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResume
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/chooseLanguage.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/personalDetails.dart';
 import 'package:cv_app/features/homeSreen/presentation/view_model/cubit/add_resume_data_cubit.dart';
+import 'package:cv_app/features/pdfScreen/data/pdf_class.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -27,9 +30,17 @@ class _CreateResumeViewState extends State<CreateResumeView> {
     return Form(
       key: _globalKey,
       child: BlocListener<AddResumeDataCubit, AddResumeDataState>(
-        listener: (context, state)  {
+        listener: (context, state) async  {
           if(state is AddResumeDataSuccess){
-            Navigator.pushNamed(context, PagesNames.pdfScreen);
+            print(data.address);
+              File file = await PdfView.createPDF();
+              Navigator.pushNamed(context, PagesNames.pdfScreen,arguments: file);
+            
+             
+               
+            
+            
+           
           }
           
         },
@@ -97,6 +108,7 @@ class _CreateResumeViewState extends State<CreateResumeView> {
                             
                             await BlocProvider.of<AddResumeDataCubit>(context)
                                 .addDataToHive(data);
+                                
                            
                           }
                         },
