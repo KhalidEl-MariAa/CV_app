@@ -34,13 +34,14 @@ class _CreateResumeViewState extends State<CreateResumeView> {
           if(state is AddResumeDataSuccess){
             print(data.address);
               File file = await PdfView.createPDF();
+              print('sucess');
               Navigator.pushNamed(context, PagesNames.pdfScreen,arguments: file);
+              
             
              
-               
-            
-            
-           
+          }
+         else if (state is AddResumeDataFailure) {
+            print('fail: ${state.error}');
           }
           
         },

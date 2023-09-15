@@ -22,10 +22,11 @@ class AddResumeDataCubit extends Cubit<AddResumeDataState> {
       if(e is HiveError){
 
     await box.clear();
-    emit(AddResumeDataFailure());
+    emit(AddResumeDataFailure(error: "hive error : ${e.toString()}"));
     }
     else{
-     emit(AddResumeDataFailure());
+      
+     emit(AddResumeDataFailure(error: 'not hive ${e.toString()}'));
     }
 
     } 
