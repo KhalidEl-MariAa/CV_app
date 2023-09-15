@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:typed_data';
 import 'package:cv_app/core/utils/constants/const.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -37,10 +38,11 @@ class _AddImageViewState extends State<AddImageView> {
                             pickedimag= await imagepicker.pickImage(source: ImageSource.camera);
                           if (pickedimag!=null) {
                             imagefile=File(pickedimag.path);
-                            data.imageFile=imagefile;
                             setState(() {
                               
                             });
+                            Future<Uint8List> bytes = imagefile!.readAsBytes();
+                            data.imageFile = await bytes;
                             }
                           else{}
                           }
@@ -62,11 +64,11 @@ class _AddImageViewState extends State<AddImageView> {
                           pickedimag= await imagepicker.pickImage(source: ImageSource.gallery);
                           if (pickedimag!=null) {
                             imagefile=File(pickedimag.path);
-                            data.imageFile=imagefile;
-                            
                             setState(() {
                               
                             });
+                             Future<Uint8List> bytes = imagefile!.readAsBytes();
+                             data.imageFile = await bytes;
                              }
                           
                           else{}}
