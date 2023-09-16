@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:hive/hive.dart';
@@ -37,7 +36,7 @@ List? workexp;
 @HiveField(14)
 List? projects;
 @HiveField(15)
-Uint8List? imageFile;
+Uint8List imageFile;
 
 ResumeModel(
   {
@@ -55,7 +54,7 @@ ResumeModel(
       this.languages,
       this.skills,
       this.courses,
-      this.imageFile,
+      required this.imageFile,
       this.workexp});
 
 

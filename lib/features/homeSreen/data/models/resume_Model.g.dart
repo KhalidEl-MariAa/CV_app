@@ -31,7 +31,7 @@ class ResumeModelAdapter extends TypeAdapter<ResumeModel> {
       languages: (fields[11] as List?)?.cast<dynamic>(),
       skills: (fields[12] as List?)?.cast<dynamic>(),
       courses: (fields[10] as List?)?.cast<dynamic>(),
-      imageFile: fields[15] as Uint8List?,
+      imageFile: fields[15] as Uint8List,
       workexp: (fields[13] as List?)?.cast<dynamic>(),
     );
   }
