@@ -14,7 +14,7 @@ String? phoneNumber;
 @HiveField(3)
 String? email;
 @HiveField(4)
-String? address;
+String? nationality;
 @HiveField(5)
 String? city;
 @HiveField(6)
@@ -44,7 +44,7 @@ ResumeModel(
       this.fullname,
       this.phoneNumber,
       this.email,
-      this.address,
+      this.nationality,
       this.city,
       this.learningDegree,
       this.summary,

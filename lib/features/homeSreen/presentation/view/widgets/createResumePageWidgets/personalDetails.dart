@@ -109,10 +109,10 @@ class _PersonalDetailsViewState extends State<PersonalDetailsView> {
                       validate: true,
                       controller: addressCont,
                       onchange: (p0) {
-                        data.address=p0;
+                        data.nationality=p0;
                       },
                       validateString: "Can't be empty",
-                       hintText: 'Address',
+                       hintText: 'Nationality',
                        hintstyle: bodyfont,
                        prefixIcon: const Icon(Icons.home,size: 30,),)
                   ),

@@ -21,7 +21,7 @@ class ResumeModelAdapter extends TypeAdapter<ResumeModel> {
       fullname: fields[1] as String?,
       phoneNumber: fields[2] as String?,
       email: fields[3] as String?,
-      address: fields[4] as String?,
+      nationality: fields[4] as String?,
       city: fields[5] as String?,
       learningDegree: fields[6] as String?,
       summary: fields[7] as String?,
@@ -49,7 +49,7 @@ class ResumeModelAdapter extends TypeAdapter<ResumeModel> {
       ..writeByte(3)
       ..write(obj.email)
       ..writeByte(4)
-      ..write(obj.address)
+      ..write(obj.nationality)
       ..writeByte(5)
       ..write(obj.city)
       ..writeByte(6)
