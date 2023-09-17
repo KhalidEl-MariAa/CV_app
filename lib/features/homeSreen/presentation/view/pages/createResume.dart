@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:io';
 
 import 'package:cv_app/core/utils/constants/const.dart';
@@ -7,6 +9,7 @@ import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResume
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/addSkills.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/add_Workexp.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/add_project.dart';
+import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/alert_Dialog.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/chooseLanguage.dart';
 import 'package:cv_app/features/homeSreen/presentation/view/widgets/createResumePageWidgets/personalDetails.dart';
 import 'package:cv_app/features/homeSreen/presentation/view_model/cubit/add_resume_data_cubit.dart';
@@ -105,13 +108,19 @@ class _CreateResumeViewState extends State<CreateResumeView> {
                     const AddImageView(),
                     ElevatedButton(
                         onPressed: () async {
+                          if(data.imageFile.lengthInBytes==0){
+                            showDialog(context: context,
+                             builder: (context) => 
+                             const CustomAlert(title: 'Warning', content: "Add a photo...it can't be empty"),);
+                          }
+                          else{
                           if (_globalKey.currentState!.validate()){
                             
                             await BlocProvider.of<AddResumeDataCubit>(context)
                                 .addDataToHive(data);
                                 
                            
-                          }
+                          }}
                         },
                         child: Text(
                           'generate',
