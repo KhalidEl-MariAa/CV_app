@@ -63,7 +63,8 @@ class _AddProjectViewState extends State<AddProjectView> {
            }
           },
           num: projnum,
-           textFieldHint: 'ex: Project Name - Github link :\n      Github link is optional for you ',
+           textFieldHint: 'Press Done after typing',
+           labelText: 'Project Name',
             suffixIcon: const Icon(Icons.add,size: 30,)),
         duration: const Duration(milliseconds: 700),
          crossFadeState: z? CrossFadeState.showSecond:CrossFadeState.showFirst

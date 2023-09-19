@@ -16,7 +16,8 @@ class CustomTextField extends StatelessWidget {
     this.onchange,
      this.controller,
      this.onFieldSubmitted,
-     this.validate});
+     this.validate,
+     this.maxlines});
 
   String validateString;
   String hintText;
@@ -29,10 +30,13 @@ class CustomTextField extends StatelessWidget {
   String? labelText;
   void Function(String)? onFieldSubmitted;
   bool? validate = true;
+  int? maxlines;
   
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      
+                      maxLines: maxlines ,
                        onFieldSubmitted: onFieldSubmitted,
                        controller:controller ,
                        onChanged: onchange,
@@ -49,11 +53,11 @@ class CustomTextField extends StatelessWidget {
                       decoration: InputDecoration(
                         border: OutlineInputBorder(borderRadius: BorderRadius.circular(35)),
                         hintText: hintText,
-                        hintMaxLines: 2,
                         hintStyle: hintstyle,
                         labelText: labelText,
                         prefixIcon: prefixIcon,
                         suffixIcon: suffixIcon,
+                        labelStyle: bodyfont
                         
                         
                       ),

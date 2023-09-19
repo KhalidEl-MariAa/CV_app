@@ -66,7 +66,8 @@ class _AddWorkExperienceViewState extends State<AddWorkExperienceView> {
            }
           },
           num: workNum,
-           textFieldHint: 'ex: Position in "Company name "',
+           textFieldHint: 'Press submit after typing"',
+           labelText: 'ex: Position in "Company name "',
             suffixIcon: const Icon(Icons.add,size: 30,)),
         duration: const Duration(milliseconds: 700),
          crossFadeState: z? CrossFadeState.showSecond:CrossFadeState.showFirst

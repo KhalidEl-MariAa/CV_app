@@ -29,19 +29,22 @@ class _ContactUsDetailsViewState extends State<ContactUsDetailsView> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left:8.0,right: 8,bottom: 50),
-                        child: Text(
-                        "We can't know your identity so you can say what you want, if you need from us to recommunicate with you after your message ... please write your email or phone in the end of your message",
-                        style: titlefont.copyWith(fontSize: MediaQuery.of(context).size.width*0.05,fontWeight: FontWeight.bold),),
-                      ),
-                    CustomTextField(
-                      controller: contactUsCont,
-                      validateString: "Can;t send Nothing", 
-                      hintText: 'Try to be clear',
-                       hintstyle: bodyfont,
-                       labelText: 'Describe your purpose',
-                       ),
+                    
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal:5.0),
+                      child: CustomTextField(
+                        onchange: (p0) {
+                          body=p0;
+                        },
+                        
+                        validate: true,
+                        controller: contactUsCont,
+                        validateString: "Can't send Nothing", 
+                        hintText: 'Try to be clear and shortly',
+                         hintstyle: bodyfont,
+                         labelText: 'Describe your purpose',
+                         ),
+                    ),
                     const SizedBox(height: 20,),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
@@ -58,7 +61,7 @@ class _ContactUsDetailsViewState extends State<ContactUsDetailsView> {
                              await FlutterEmailSender.send(email);
                           }
                           catch(e){
-                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('There was an error, try later')));
+                       ScaffoldMessenger.of(context).showSnackBar( SnackBar(content: Text('There was an error, try later $e')));
                           }
                         }
                       },

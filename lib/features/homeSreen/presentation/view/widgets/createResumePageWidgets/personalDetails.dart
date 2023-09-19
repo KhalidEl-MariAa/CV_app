@@ -48,13 +48,16 @@ class _PersonalDetailsViewState extends State<PersonalDetailsView> {
       Padding(
                     padding: const EdgeInsets.only(top:27,left: 13,right: 13),
                     child: CustomTextField(
+                      maxlines: 1,
                       validate: true,
                       controller: headlineCont,
                       onchange: (x){
                         data.headline=x;
                       },
                       validateString: "Can't be empty",
-                       hintText: 'Headline ( Your job(s) name(s) )', 
+                       hintText: 'Your job name ', 
+                       labelText: 'Headline',
+
                        hintstyle: bodyfont,
                        prefixIcon: const Icon(Icons.title,size: 30,),
                        inputType: TextInputType.text,)
@@ -63,13 +66,15 @@ class _PersonalDetailsViewState extends State<PersonalDetailsView> {
       Padding(
                     padding: const EdgeInsets.symmetric(vertical: 27,horizontal: 13),
                     child: CustomTextField(
+                      maxlines: 1,
                       validate: true,
                       controller: fullnameCont,
                       onchange: (p0) {
                         data.fullname=p0;
                       },
                       validateString: "Can't be empty",
-                       hintText: 'Full Name',
+                      hintText: '',
+                       labelText: 'Full Name',
                         hintstyle: bodyfont,
                         prefixIcon: const Icon(Icons.draw_outlined,size: 30,), )
                   ),
@@ -77,13 +82,15 @@ class _PersonalDetailsViewState extends State<PersonalDetailsView> {
       Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 13),
                     child: CustomTextField(
+                      maxlines: 1,
                       validate: true,
                       controller: phoneCont,
                       onchange: (p0) {
                         data.phoneNumber=p0;
                       },
                       validateString: "Can't be empty",
-                       hintText: 'Phone Number', 
+                       hintText: '', 
+                       labelText: 'Phone Number',
                        hintstyle: bodyfont,
                        prefixIcon: const Icon(Icons.phone,size: 30,),
                        inputType: TextInputType.phone,)
@@ -92,13 +99,15 @@ class _PersonalDetailsViewState extends State<PersonalDetailsView> {
       Padding(
                     padding: const EdgeInsets.symmetric(vertical: 27,horizontal: 13),
                     child: CustomTextField(
+                      maxlines: 1,
                       validate: true,
                       controller: emailCont,
                       onchange: (p0) {
                         data.email=p0;
                         },
                       validateString: "Can't be empty",
-                       hintText: 'Email',
+                       hintText: '',
+                       labelText: 'Email',
                         hintstyle: bodyfont,
                         prefixIcon: const Icon(Icons.email,size: 30,),)
                   ),
@@ -106,13 +115,15 @@ class _PersonalDetailsViewState extends State<PersonalDetailsView> {
       Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 13),
                     child: CustomTextField(
+                      maxlines: 1,
                       validate: true,
                       controller: addressCont,
                       onchange: (p0) {
                         data.nationality=p0;
                       },
                       validateString: "Can't be empty",
-                       hintText: 'Nationality',
+                       hintText: '',
+                       labelText: 'Nationality',
                        hintstyle: bodyfont,
                        prefixIcon: const Icon(Icons.home,size: 30,),)
                   ),
@@ -120,43 +131,55 @@ class _PersonalDetailsViewState extends State<PersonalDetailsView> {
       Padding(
                     padding: const EdgeInsets.symmetric(vertical: 27,horizontal: 13),
                     child: CustomTextField(
+                      maxlines: 1,
                       validate: true,
                       controller: cityCont,
                       onchange: (p0) {
+                        
                         data.city=p0;
                       },
                       validateString:"Can't be empty",
-                       hintText: 'City', 
+                       hintText: '',
+                       labelText: 'City', 
                        hintstyle: bodyfont,
                        prefixIcon: const Icon(Icons.location_on,size: 30,),)
                   ),
 
       Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 13),
-                    child: CustomTextField(
-                      validate: true,
-                      controller: learningDegreeCont,
-                      onchange: (p0) {
-                        data.learningDegree=p0;
-                      },
-                      validateString: "Can't be empty",
-                      hintText: 'Learning degree (Fresh graduate - Graduate since 2021)',
-                       hintstyle: bodyfont,
-                       prefixIcon: const Icon(Icons.school,size: 30,),)
+                    child: Expanded(
+                      child: CustomTextField(
+                        maxlines: null,
+                        validate: true,
+                        controller: learningDegreeCont,
+                        inputType: TextInputType.text,
+                        onchange: (p0) {
+                          data.learningDegree=p0;
+                        },
+                        validateString: "Can't be empty",
+                        hintText: 'Student - Fresh graduate - Graduate since..',
+                        labelText:'Learning degree' ,
+                         hintstyle: bodyfont,
+                         prefixIcon: const Icon(Icons.school,size: 30,),),
+                    )
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top:27,left: 13,right: 13),
-                    child: CustomTextField(
-                      validate: true,
-                      controller: summaryCont,
-                      onchange: (p0) {
-                        data.summary=p0;
-                      },
-                      validateString: "Can't be empty",
-                       hintText: 'Summary about yourself', 
-                       hintstyle: bodyfont,
-                       prefixIcon: const Icon(Icons.summarize,size: 30,),
-                       inputType: TextInputType.text,)
+                    child: Expanded(
+                      child: CustomTextField(
+                        maxlines: null,
+                        validate: true,
+                        controller: summaryCont,
+                        onchange: (p0) {
+                          data.summary=p0;
+                        },
+                        validateString: "Can't be empty",
+                         hintText: 'Talk about yourself', 
+                         labelText: 'Summary',
+                         hintstyle: bodyfont,
+                         prefixIcon: const Icon(Icons.summarize,size: 30,),
+                         inputType: TextInputType.text,),
+                    )
                   ),
 
       ],

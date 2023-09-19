@@ -50,7 +50,8 @@ class _AddSkillsViewState extends State<AddSkillsView> {
 
                         },
                         num: skillNum,
-                         textFieldHint: 'Skills...press Done button of keyboard after finish typing',
+                         textFieldHint: 'Press Done button of keyboard after finish typing',
+                         labelText: 'Skills',
                           suffixIcon: const Icon(Icons.add,size: 30,)
                           ),
                      secondChild: const SizedBox(),

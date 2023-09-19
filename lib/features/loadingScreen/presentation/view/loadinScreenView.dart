@@ -22,7 +22,7 @@ class _LoadingScreenViewState extends State<LoadingScreenView> {
 
   void navigateToHome(){
 
-    Future.delayed(const Duration(seconds: 5),
+    Future.delayed(const Duration(seconds: 2),
     () {
       Navigator.pushReplacementNamed(context, PagesNames.homeScreenName);
     },);
