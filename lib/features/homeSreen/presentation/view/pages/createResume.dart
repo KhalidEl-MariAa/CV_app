@@ -35,13 +35,13 @@ class _CreateResumeViewState extends State<CreateResumeView> {
       child: BlocListener<AddResumeDataCubit, AddResumeDataState>(
         listener: (context, state) async  {
           if(state is AddResumeDataSuccess){
-            print(data.address);
-              File file = await PdfView.createPDF();
-              print('sucess');
-              Navigator.pushNamed(context, PagesNames.pdfScreen,arguments: file);
-              
             
-             
+              File file = await PdfView.createPDF();
+              
+                Navigator.pushNamed(context, PagesNames.pdfScreen,arguments: file);
+              
+              
+               
           }
          else if (state is AddResumeDataFailure) {
             print('fail: ${state.error}');
